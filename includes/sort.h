@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/06 14:34:03 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/05 17:15:01 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/06 14:33:19 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort.h"
+#ifndef SORT_H
+# define SORT_H
 
-void	print_sort(t_stacks *stack)
-{
-	(void) stack;
-}
+# include "stacks.h"
+
+void	print_sort(t_stacks *stack);
+
+#endif
