@@ -38,10 +38,12 @@ fclean	:	clean
 fcleanlibs	:
 	make -C libs/libft fclean
 
+fcleanall	:	fclean fcleanlibs
+
 re		:	fclean ${NAME}
 
 relibs	:	fcleanlibs	libs
 
-reall	:	re relibs
+reall	:	relibs re
 
-.PHONY	:	all clean fclean re reall relibs fcleanlibs libs
+.PHONY	:	all clean fclean re reall relibs fcleanlibs fcleanall libs
