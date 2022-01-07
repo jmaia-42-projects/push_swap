@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 17:42:39 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:44:18 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 static t_stack	*parse_stack_a(int ac, char **av);
 static int		check_args(int ac, char **av);
-static int		print_error();
+static int		print_error(void);
 
 int	main(int ac, char **av)
 {
@@ -78,13 +78,13 @@ static int	check_args(int ac, char **av)
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 				return (0);
 			j++;
-		} 
+		}
 		i++;
 	}
 	return (1);
 }
 
-static int	print_error()
+static int	print_error(void)
 {
 	write(2, "Error\n", 6);
 	return (1);
