@@ -1,5 +1,5 @@
 SRCS		=	main.c sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
-				stacks/rrotate.c stacks/push_elem.c
+				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c
 
 OBJS		=	${SRCS:.c=.o}
 

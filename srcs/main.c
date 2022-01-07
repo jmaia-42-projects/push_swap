@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/06 18:37:05 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/07 13:33:50 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 #include "libft.h"
 #include "sort.h"
 
-static t_list	*parse_stack_a(int ac, char **av);
-static void	check_args(int ac, char **av);
+static t_stack	*parse_stack_a(int ac, char **av);
+static void		check_args(int ac, char **av);
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_list		*stack_a;
+	t_stack		*stack_a;
 	t_stacks	*stacks;
 
 	if (ac == 1)
@@ -31,18 +31,27 @@ int main(int ac, char **av)
 	return (0);
 }
 
-static t_list	*parse_stack_a(int ac, char **av)
+static t_stack	*parse_stack_a(int ac, char **av)
 {
 	int		i;
-	t_list	*stack;
+	int		err;
+	t_list	*list;
+	t_stack	*stack;
 
 	check_args(ac, av);
 	i = 1;
-	while (i < ac)
+	stack = malloc(sizeof(*stack));
+	if (!stack)
+		return (0);
+	while (i < ac && !err)
 	{
-		push_elem(&stack, atoi(av[i]));
+		err = push_elem(stack, atoi(av[i]));
+		if (err)
+			ft_lstclear(&list, &free);
 		i++;
 	}
+	if (!err)
+		stack->list = list;
 	return (stack);
 }
 

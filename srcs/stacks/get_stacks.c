@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_elem.c                                        :+:      :+:    :+:   */
+/*   get_stacks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 14:04:18 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 13:35:06 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/07 13:05:15 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/07 13:07:57 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stacks.h"
 
-int	push_elem(t_stack *stack, int elem)
+t_stacks	*get_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	t_list	*node;
-	int		*elem_ptr;
+	t_stacks	*stacks;
 
-	elem_ptr = malloc(sizeof(*elem_ptr));
-	if (!elem_ptr)
+	stacks = malloc(sizeof(*stacks));
+	if (!stacks)
 		return (0);
-	*elem_ptr = elem;
-	node = ft_lstnew(elem_ptr);
-	if (!node)
-	{
-		free(elem_ptr);
-		return (0);
-	}
-	ft_lstadd_front(&stack->list, node);
-	return (1);
+	stacks->stack_a = stack_a;
+	stacks->stack_b = stack_b;
+	return (stacks);
 }
