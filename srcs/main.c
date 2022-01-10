@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 17:44:18 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/10 16:38:10 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int ac, char **av)
 	stack_a = parse_stack_a(ac, av);
 	stacks = get_stacks(stack_a, 0);
 	print_sort(stacks);
+	free_stacks(stacks);
 	return (0);
 }
 
@@ -38,26 +39,21 @@ static t_stack	*parse_stack_a(int ac, char **av)
 {
 	int		i;
 	int		err;
-	t_list	*list;
 	t_stack	*stack;
 
 	err = !check_args(ac, av);
 	if (err)
 		exit(print_error());
 	i = 1;
-	stack = malloc(sizeof(*stack));
-	if (!stack)
-		return (0);
+	stack = get_stack();
 	while (i < ac && !err)
 	{
-		err = push_elem(stack, atoi(av[i]));
+		err = !push_elem(stack, atoi(av[i]));
 		if (err)
-			ft_lstclear(&list, &free);
+			ft_lstclear(&stack->list, &free);
 		i++;
 	}
-	if (!err)
-		stack->list = list;
-	else
+	if (err)
 		print_error();
 	return (stack);
 }

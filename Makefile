@@ -1,5 +1,6 @@
 SRCS		=	main.c sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
-				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c
+				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c \
+				stacks/free_stacks.c stacks/get_stack.c
 
 OBJS		=	${SRCS:.c=.o}
 
@@ -7,7 +8,7 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -fsanitize=address
 
 INCLUDE		=	includes/
 

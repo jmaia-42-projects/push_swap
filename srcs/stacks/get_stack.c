@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_stacks.c                                       :+:      :+:    :+:   */
+/*   get_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 13:05:15 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/10 15:33:42 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/10 16:36:34 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/10 16:38:01 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stacks.h"
 
-t_stacks	*get_stacks(t_stack *stack_a, t_stack *stack_b)
+t_stack	*get_stack(void)
 {
-	t_stacks	*stacks;
+	t_stack	*stack;
 
-	stacks = malloc(sizeof(*stacks));
-	if (!stacks)
+	stack = malloc(sizeof(*stack));
+	if (!stack)
 		return (0);
-	stacks->stack_a = stack_a;
-	stacks->stack_b = stack_b;
-	return (stacks);
+	stack->list = 0;
+	return (stack);
 }

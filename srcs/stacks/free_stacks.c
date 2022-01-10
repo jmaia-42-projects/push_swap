@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_stacks.c                                       :+:      :+:    :+:   */
+/*   free_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 13:05:15 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/10 15:33:42 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/10 15:35:40 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stacks.h"
+#include <stdlib.h>
 
-t_stacks	*get_stacks(t_stack *stack_a, t_stack *stack_b)
+static void	free_stack(t_stack *stack);
+
+void	free_stacks(t_stacks *stacks)
 {
-	t_stacks	*stacks;
+	free_stack(stacks->stack_a);
+	free_stack(stacks->stack_b);
+	free(stacks);
+}
 
-	stacks = malloc(sizeof(*stacks));
-	if (!stacks)
-		return (0);
-	stacks->stack_a = stack_a;
-	stacks->stack_b = stack_b;
-	return (stacks);
+static void	free_stack(t_stack *stack)
+{
+	ft_lstclear(&stack->list, &free);
+	free(stack);
 }

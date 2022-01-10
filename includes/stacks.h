@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 10:43:41 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 13:28:50 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/10 16:37:35 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ typedef struct s_stacks
 	t_stack	*stack_b;
 }	t_stacks;
 
+t_stack		*get_stack(void);
+
 t_stacks	*get_stacks(t_stack *stack_a, t_stack *stack_b);
 int			push_elem(t_stack *stack, int elem);
+void		free_stacks(t_stacks *stacks);
 
 void		ss(t_stacks *stacks);
 void		sa(t_stacks *stacks);
