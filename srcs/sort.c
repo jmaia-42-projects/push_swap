@@ -6,13 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/06 14:34:03 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/12 12:26:51 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 
-void	print_sort(t_stacks *stack)
+void	print_sort(t_stacks *stacks)
 {
 	(void) stack;
 }
