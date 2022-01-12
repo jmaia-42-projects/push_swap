@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/06 12:49:16 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/12 17:21:12 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,6 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 t_list			*ft_lstprevious(t_list *lst, t_list *node);
+t_list			*ft_lstcpy(t_list *lst);
+t_list			*ft_lstsort(t_list *lst, int (*cmp)(void *, void *));
 #endif
