@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/10 16:38:10 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/13 12:38:34 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 	stack_a = parse_stack_a(ac, av);
 	stacks = get_stacks(stack_a, 0);
 	print_sort(stacks);
-	free_stacks(stacks);
+	free_stacks(stacks, 1);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 17:19:37 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/12 18:09:26 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/13 12:47:51 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list	*ft_lstsort(t_list *lst, int (*cmp)(void *, void *))
 		while (cur2)
 		{
 			if (cmp(cur1->content, cur2->content) > 0)
-				swap(&cur1->content, cur2->content);
+				swap(&cur1->content, &cur2->content);
 			cur2 = cur2->next;
 		}
 		cur1 = cur1->next;

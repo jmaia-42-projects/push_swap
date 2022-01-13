@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/12 18:22:30 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/13 12:01:19 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ t_list	*find_path(t_sort *sorter, t_stacks *stacks)
 {
 	(void) sorter;
 	(void) stacks;
+	return (0);
 }
