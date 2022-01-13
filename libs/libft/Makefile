@@ -6,7 +6,7 @@
 #    By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 12:50:34 by jmaia             #+#    #+#              #
-#    Updated: 2022/01/13 12:46:53 by jmaia            ###   ########.fr        #
+#    Updated: 2022/01/13 12:49:36 by jmaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 NAME		=	libft.a
 
-CFLAGS		=	-Wall -Werror -Wextra -fsanitize=address -g3
+CFLAGS		=	-Wall -Werror -Wextra
 
 export BUILD		?=	${PWD}/build
 

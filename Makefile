@@ -9,7 +9,7 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra -fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra
 
 INCLUDE		=	includes/
 
@@ -21,7 +21,7 @@ build/%.o	:	srcs/%.c
 	@if [ ! -d $(dir $@) ]; then\
 		mkdir -p $(dir $@);\
 	fi
-	cc ${CFLAGS} -I ${INCLUDE} -c $< -o $@ -g3
+	cc ${CFLAGS} -I ${INCLUDE} -c $< -o $@
 
 $(NAME)	:	$(addprefix build/,${OBJS})	${LIBS}
 	cc ${CFLAGS} -o ${NAME} $(addprefix build/,${OBJS}) ${LIBS}
