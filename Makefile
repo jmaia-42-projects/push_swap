@@ -1,7 +1,9 @@
 SRCS		=	main.c sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c \
 				stacks/free_stacks.c stacks/get_stack.c print_path.c \
-				find_path.c
+				find_path.c stacks/inv_ops/inv_swap.c \
+				stacks/inv_ops/inv_push.c stacks/inv_ops/inv_rotate.c \
+				stacks/inv_ops/inv_rrotate.c
 
 OBJS		=	${SRCS:.c=.o}
 
