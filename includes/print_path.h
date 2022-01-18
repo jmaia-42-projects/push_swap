@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:25:10 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/12 18:25:55 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/18 15:44:46 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "libft.h"
 
-void	print_path(t_list *path);
+# include "path.h"
+
+void	print_path(t_path *path);
 
 #endif

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   clone_stacks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/17 16:13:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/17 16:08:06 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/18 14:48:24 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stacks.h"
-#include <stdlib.h>
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
-{
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+t_stacks	*clone_stacks(t_stacks *stacks)
+{	
+	t_stacks	*clone;
 
-void	free_stack(t_stack *stack, int do_free_content)
-{
-	if (do_free_content)
-		ft_lstclear(&stack->list, &free);
-	else
-		ft_lstclear(&stack->list, 0);
-	free(stack);
+	clone = malloc(sizeof(*clone));
+	if (!clone)
+		return (0);
+	clone->stack_a = get_stack();
+	clone->stack_b = get_stack();
+	if (!clone->stack_a || !clone->stack_b)
+	{
+		free_stacks(clone, 0);
+		return (0);
+	}
+	clone->stack_a->list = ft_lstcpy(stacks->stack_a->list);
+	clone->stack_b->list = ft_lstcpy(stacks->stack_b->list);
+	return (clone);
 }

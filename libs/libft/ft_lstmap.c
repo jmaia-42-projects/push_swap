@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:37:29 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/25 11:34:32 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/18 18:08:09 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*f_new;
 
+	(void) del;
 	if (lst == 0)
 		return (0);
 	cur = lst;

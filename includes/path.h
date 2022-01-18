@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   path.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/17 16:13:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/17 17:13:07 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/18 14:54:10 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#ifndef PATH_H
+# define PATH_H
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
-{
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+# include "stacks.h"
 
-void	free_stack(t_stack *stack, int do_free_content)
+typedef struct s_path
 {
-	if (do_free_content)
-		ft_lstclear(&stack->list, &free);
-	else
-		ft_lstclear(&stack->list, 0);
-	free(stack);
-}
+	t_stacks		*stacks;
+	struct s_path	*parent_path;
+	const char		*op;
+}	t_path;
+
+t_path	*get_path(t_stacks *stacks, t_path *parent_path, const char *op);
+t_path	*clone_path(t_path *path);
+void	free_path(t_path **path);
+
+#endif

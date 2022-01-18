@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   ft_lstequals.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/17 16:13:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/17 16:39:10 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/17 16:41:46 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#include "libft.h"
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
+int	ft_lstequals(t_list *lst1, t_list *lst2)
 {
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+	t_list	*cur1;
+	t_list	*cur2;
 
-void	free_stack(t_stack *stack, int do_free_content)
-{
-	if (do_free_content)
-		ft_lstclear(&stack->list, &free);
-	else
-		ft_lstclear(&stack->list, 0);
-	free(stack);
+	cur1 = lst1;
+	cur2 = lst2;
+	while (cur1 && cur2)
+	{
+		if (cur1->content != cur2->content)
+			return (0);
+		cur1 = cur1->next;
+		cur2 = cur2->next;
+	}
+	return (!cur1 && !cur2);
 }

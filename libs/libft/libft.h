@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/12 17:21:12 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/18 17:51:43 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,10 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	struct s_list	*end;
 }	t_list;
 
+void			ft_lstset_next(t_list *lst, t_list *next);
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 int				ft_lstsize(t_list *lst);
@@ -78,4 +80,5 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 t_list			*ft_lstprevious(t_list *lst, t_list *node);
 t_list			*ft_lstcpy(t_list *lst);
 t_list			*ft_lstsort(t_list *lst, int (*cmp)(void *, void *));
+int				ft_lstequals(t_list *lst1, t_list *lst2);
 #endif

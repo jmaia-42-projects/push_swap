@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:39:50 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 13:34:45 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/18 18:05:46 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	rrotate(t_stack *stack)
 		return ;
 	last = ft_lstlast(*list);
 	new_last = ft_lstprevious(*list, last);
-	last->next = *list;
+	ft_lstset_next(last, *list);
 	*list = last;
-	new_last->next = 0;
+	ft_lstset_next(new_last, 0);
 }
