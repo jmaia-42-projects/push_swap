@@ -6,13 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/18 17:14:12 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/18 23:16:53 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "find_path.h"
 
-static t_list	*get_stacks_children(t_path *parent_path);
+static t_list	*append_stacks_children(t_list *the_list);
 static void		init_inv_ops(t_ops inv_ops[11]);
 
 t_path	*find_path(t_sort *sorter, t_stacks *stacks)
@@ -24,15 +24,12 @@ t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 	path = 0;
 	while (sorter->the_list)
 	{
-		children = get_stacks_children((t_path *) sorter->the_list->content);
+		children = append_stacks_children(sorter->the_list);
 		if (!children)
 			return (0);
 		path = find_stacks_present(children, stacks);
 		if (path)
-		{
 			return (path);
-		}
-		ft_lstadd_back(&sorter->the_list, children);
 		next_node = sorter->the_list->next;
 		free(sorter->the_list);
 		sorter->the_list = next_node;
@@ -57,7 +54,7 @@ t_path	*find_stacks_present(t_list *lst, t_stacks *stacks)
 	return (0);
 }
 
-static t_list	*get_stacks_children(t_path *parent_path)
+static t_list	*append_stacks_children(t_list *the_list)
 {
 	t_list		*children;
 	t_list		*child_lst;
@@ -70,17 +67,18 @@ static t_list	*get_stacks_children(t_path *parent_path)
 	i = 0;
 	while (i < 11)
 	{
-		child = get_path(0, parent_path, inv_ops[i].op_name);
-		child->stacks = clone_stacks(parent_path->stacks);
+		child = get_path(0, (t_path *) the_list->content, inv_ops[i].op_name);
+		child->stacks = clone_stacks(((t_path *) the_list->content)->stacks);
 		if (!child->stacks)
 		{
 			free_path(&child);
 			return (0);
 		}
-		inv_ops[i].inv_op(child->stacks);
+		inv_ops[i++].inv_op(child->stacks);
 		child_lst = ft_lstnew(child);
-		ft_lstadd_front(&children, child_lst);
-		i++;
+		if (!children)
+			children = child_lst;
+		ft_lstadd_back(&the_list, child_lst);
 	}
 	return (children);
 }
