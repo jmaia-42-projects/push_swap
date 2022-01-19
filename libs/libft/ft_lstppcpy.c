@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:29:45 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:29:16 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 16:47:32 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_listpp	*ft_lstppcpy(t_listpp *lstpp)
 	if (!cpy)
 		return (0);
 	cpy->begin = ft_lstcpy(lstpp->begin);
-	if (!cpy->begin)
+	if (!cpy->begin && lstpp->begin)
 	{
 		free(cpy);
 		return (0);

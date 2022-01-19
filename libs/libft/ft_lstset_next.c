@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 17:51:51 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 14:29:53 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 16:49:28 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstset_next(t_list *lst, t_list *next)
 {
-	if (!lst)
+	if (lst)
 		lst->next = next;
-	if (!next)
+	if (next)
 		next->previous = lst;
 }
