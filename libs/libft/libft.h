@@ -6,13 +6,16 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/18 23:27:33 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 16:29:50 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stddef.h>
+# include <stdlib.h>
+
 // Libc functions
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -62,23 +65,37 @@ int				ft_strcmp(char *s1, char *s2);
 typedef struct s_list
 {
 	void			*content;
+	struct s_list	*previous;
 	struct s_list	*next;
-	struct s_list	*end;
 }	t_list;
 
-void			ft_lstset_next(t_list *lst, t_list *next);
-t_list			*ft_lstnew(void *content);
-void			ft_lstadd_front(t_list **lst, t_list *new);
-int				ft_lstsize(t_list *lst);
-t_list			*ft_lstlast(t_list *lst);
-void			ft_lstadd_back(t_list **lst, t_list *new);
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
-void			ft_lstclear(t_list **lst, void (*del)(void *));
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
-t_list			*ft_lstprevious(t_list *lst, t_list *node);
-t_list			*ft_lstcpy(t_list *lst);
-t_list			*ft_lstsort(t_list *lst, int (*cmp)(void *, void *));
-int				ft_lstequals(t_list *lst1, t_list *lst2);
+typedef struct s_listpp
+{
+	t_list	*begin;
+	t_list	*end;
+}	t_listpp;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstset_next(t_list *lst, t_list *next);
+void	ft_lstbreaklink(t_list *lst, t_list *next);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
+			void (*del)(void *));
+t_list	*ft_lstprevious(t_list *lst);
+t_list	*ft_lstcpy(t_list *lst);
+t_list	*ft_lstsort(t_list *lst, int (*cmp)(void *, void *));
+int		ft_lstequals(t_list *lst1, t_list *lst2);
+
+t_listpp	*ft_lstppnew(t_list *begin, t_list *end);
+t_listpp	*ft_lstppcpy(t_listpp *lstpp);
+t_listpp	*ft_lstppsort(t_list *lst, int (*cmp)(void *, void *));
+void		ft_lstppadd_front(t_listpp *lstpp, t_list *new);
+void		ft_lstppadd_back(t_listpp *lstpp, t_list *new);
+void		ft_lstppclear(t_listpp **lstpp, void (*del)(void *));
 #endif

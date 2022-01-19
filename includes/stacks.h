@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 10:43:41 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/17 23:31:03 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 13:13:07 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct s_stack
 {
-	t_list	*list;
+	t_listpp	*lstpp;
 }	t_stack;
 
 typedef struct s_stacks

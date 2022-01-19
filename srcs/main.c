@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/18 17:25:30 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 15:09:51 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static t_stack	*parse_stack_a(int ac, char **av)
 	{
 		err = !push_elem(stack, atoi(av[i]));
 		if (err)
-			ft_lstclear(&stack->list, &free);
+			ft_lstppclear(&stack->lstpp, &free);
 		i--;
 	}
 	if (err)

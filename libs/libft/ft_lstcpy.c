@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 17:09:07 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/13 12:43:57 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 14:12:41 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_list	*ft_lstcpy(t_list *lst)
 	{
 		cur = cur->next;
 		cur_cpy->next = ft_lstnew(cur->content);
+		cur_cpy->next->previous = cur_cpy;
 		cur_cpy = cur_cpy->next;
 		if (!cur_cpy)
 		{

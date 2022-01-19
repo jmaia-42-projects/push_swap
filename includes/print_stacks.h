@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   print_stacks.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:04:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/19 11:09:08 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/19 11:10:11 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#ifndef PRINT_STACKS_H
+# define PRINT_STACKS_H
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
-{
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+# include "stacks.h"
 
-void	free_stack(t_stack *stack, int do_free_content)
-{
-	if (do_free_content)
-		ft_lstppclear(&stack->lstpp, &free);
-	else
-		ft_lstppclear(&stack->lstpp, 0);
-	free(stack);
-}
+void	print_stacks(t_stacks *stacks);
+void	print_stack(t_stack	*stack);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/18 16:23:21 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 16:01:10 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_sort(t_stacks *stacks)
 	sorter = init_sorter(stacks);
 	if (!sorter)
 		return ;
-	path = find_stacks_present(sorter->the_list, stacks);
+	path = find_stacks_present(sorter->the_list->begin, stacks);
 	if (!path)
 		path = find_path(sorter, stacks);
 	if (path)
@@ -37,20 +37,21 @@ static t_sort	*init_sorter(t_stacks *stacks)
 	t_stack		*stack_a_the_list;
 	t_stacks	*stacks_the_list;
 	t_path		*path_the_list;
+	t_list		*lst;
 
 	sorter = malloc(sizeof(*sorter));
 	if (!sorter)
 		return (0);
-	sorter->sorted_list = ft_lstsort(stacks->stack_a->list, &intcmp);
+	sorter->sorted_list = ft_lstppsort(stacks->stack_a->lstpp->begin, &intcmp);
 	stack_a_the_list = get_stack();
 	if (stack_a_the_list)
 	{
-		stack_a_the_list->list = ft_lstcpy(sorter->sorted_list);
+		stack_a_the_list->lstpp = ft_lstppcpy(sorter->sorted_list);
 		stacks_the_list = get_stacks(stack_a_the_list, get_stack());
 		path_the_list = get_path(stacks_the_list, 0, 0);
-		sorter->the_list = ft_lstnew(path_the_list);
+		lst = ft_lstnew(path_the_list);
+		sorter->the_list = ft_lstppnew(lst, lst);
 	}
-	sorter->paths = 0;
 	if (!sorter->sorted_list || !sorter->the_list)
 	{
 		free_sorter(&sorter);
@@ -71,9 +72,8 @@ static int	intcmp(void *v1, void *v2)
 
 void	free_sorter(t_sort **sorter)
 {
-	ft_lstclear(&(*sorter)->sorted_list, 0);
-	ft_lstclear(&(*sorter)->the_list, &free_path_but_content);
-	ft_lstclear(&(*sorter)->paths, &free);
+	ft_lstppclear(&(*sorter)->sorted_list, 0);
+	ft_lstppclear(&(*sorter)->the_list, &free_path_but_content);
 	free(*sorter);
 	*sorter = 0;
 }

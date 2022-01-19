@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   ft_lstppsort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:04:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/19 15:50:53 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/19 15:53:05 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#include "libft.h"
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
+t_listpp	*ft_lstppsort(t_list *lst, int (*cmp)(void *, void *))
 {
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+	t_listpp	*sorted_list;
 
-void	free_stack(t_stack *stack, int do_free_content)
-{
-	if (do_free_content)
-		ft_lstppclear(&stack->lstpp, &free);
-	else
-		ft_lstppclear(&stack->lstpp, 0);
-	free(stack);
+	sorted_list = malloc(sizeof(*sorted_list));
+	if (!sorted_list)
+		return (0);
+	sorted_list->begin = ft_lstsort(lst, cmp);
+	if (!sorted_list->begin)
+	{
+		free(sorted_list);
+		return (0);
+	}
+	sorted_list->end = ft_lstlast(sorted_list->begin);
+	return (sorted_list);
 }

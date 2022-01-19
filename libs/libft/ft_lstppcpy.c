@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   ft_lstppcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:04:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/19 15:29:45 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/19 16:29:16 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#include "libft.h"
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
+t_listpp	*ft_lstppcpy(t_listpp *lstpp)
 {
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+	t_listpp	*cpy;
 
-void	free_stack(t_stack *stack, int do_free_content)
-{
-	if (do_free_content)
-		ft_lstppclear(&stack->lstpp, &free);
-	else
-		ft_lstppclear(&stack->lstpp, 0);
-	free(stack);
+	cpy = malloc(sizeof(*cpy));
+	if (!cpy)
+		return (0);
+	cpy->begin = ft_lstcpy(lstpp->begin);
+	if (!cpy->begin)
+	{
+		free(cpy);
+		return (0);
+	}
+	cpy->end = ft_lstlast(cpy->begin);
+	return (cpy);
 }
