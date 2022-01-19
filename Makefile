@@ -12,7 +12,7 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra -g3 -pg #-fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 #-pg #-fsanitize=address
 
 INCLUDE		=	includes/
 

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 13:09:23 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 13:10:01 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 22:06:30 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void ft_lstppadd_back(t_listpp *lstpp, t_list *new)
 {
-	lstpp->end->next = new;
+	ft_lstset_next(lstpp->end, new);
 	lstpp->end = new;
 }
