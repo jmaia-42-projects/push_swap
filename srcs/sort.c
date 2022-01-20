@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/20 14:15:29 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/20 22:57:23 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ static int	intcmp(void *v1, void *v2)
 
 void	free_sorter(t_sort **sorter)
 {
+	// NOTE FOR THE FUTURE, FAUT PAS QUE FREE the_list MAIS AUSSI CE QU'IL Y A DANS LE PARENT_PATH MAIS ATTENTION A PAS FREE 2 FOIS T_T
 	ft_lstppclear(&(*sorter)->sorted_list, 0);
 	ft_lstppclear(&(*sorter)->the_list, &free_path_but_content);
 	free(*sorter);
