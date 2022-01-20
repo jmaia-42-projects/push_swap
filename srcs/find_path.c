@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 22:24:48 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/20 15:12:50 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 		if (path)
 			return (path);
 		next_node = sorter->the_list->begin->next;
-		free(sorter->the_list->begin);
+		free_path_but_content(sorter->the_list->begin);
 		sorter->the_list->begin = next_node;
 		sorter->the_list->begin->previous = 0;
 	}

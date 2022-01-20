@@ -6,18 +6,22 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:52:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 14:06:40 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/20 16:27:20 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+// REMOVE CA
+#include <stdio.h>
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*elem;
 
 	elem = malloc(sizeof(*elem));
+	printf("%p\n", elem);
 	if (elem == 0)
 		return (0);
 	elem->content = content;

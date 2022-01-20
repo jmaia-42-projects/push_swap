@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 13:10:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:29:05 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/20 15:57:30 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstppclear(t_listpp **lstpp, void (*del)(void *))
 {
-	if (!lstpp)
+	if (!lstpp || !*lstpp)
 		return ;
 	ft_lstclear(&(*lstpp)->begin, del);
 	free(*lstpp);

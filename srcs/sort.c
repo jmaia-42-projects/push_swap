@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:01:10 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/20 14:15:29 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static t_sort	*init_sorter(t_stacks *stacks)
 	stack_a_the_list = get_stack();
 	if (stack_a_the_list)
 	{
+		free(stack_a_the_list->lstpp);
 		stack_a_the_list->lstpp = ft_lstppcpy(sorter->sorted_list);
 		stacks_the_list = get_stacks(stack_a_the_list, get_stack());
 		path_the_list = get_path(stacks_the_list, 0, 0);
