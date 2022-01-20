@@ -1,0 +1,2 @@
+setopt shwordsplit => Pour bien split les mots
+ARG=$(rand -1000000000 1000000000 6); safe 10Gi ./push_swap $ARG
