@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:29:50 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 10:52:30 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			ft_putnbr_fd(int n, int fd);
 
 int				ft_isint(char *nbr);
 int				ft_isnbr(char *nbr);
-int				ft_strcmp(char *s1, char *s2);
+int				ft_strcmp(const char *s1, const char *s2);
 
 typedef struct s_list
 {
