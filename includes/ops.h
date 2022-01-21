@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   ops.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:04:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/18 14:59:52 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/21 15:47:41 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#ifndef OPS_H
+# define OPS_H
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
-{
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+# include "stacks.h"
 
-void	free_stack(t_stack *stack, int do_free_content)
+typedef struct s_ops
 {
-	if (do_free_content)
-		ft_lstppclear(&stack->lstpp, &free);
-	else
-		ft_lstppclear(&stack->lstpp, 0);
-	free(stack);
-}
+	void		(*inv_op)(t_stacks *);
+	const char	*op_name;
+}	t_ops;
+
+#endif

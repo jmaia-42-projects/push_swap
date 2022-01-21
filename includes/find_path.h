@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 15:36:01 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/13 12:01:03 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 15:45:05 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 # include "stacks.h"
 # include "sorter.h"
+# include "path.h"
+# include "inv_ops.h"
+# include "inv_op_utils.h"
+# include "ops.h"
 
-t_list	*find_path(t_sort *sorter, t_stacks *stacks);
+t_path	*find_path(t_sort *sorter, t_stacks *stacks);
+t_path	*find_stacks_present(t_list *lst, t_stacks *stacks);
 #endif

@@ -1,21 +1,22 @@
 SRCS		=	main.c sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c \
 				stacks/free_stacks.c stacks/get_stack.c print_path.c \
-				find_path.c stacks/inv_ops/inv_swap.c \
+				find_path.c path.c stacks/inv_ops/inv_swap.c \
 				stacks/inv_ops/inv_push.c stacks/inv_ops/inv_rotate.c \
-				stacks/inv_ops/inv_rrotate.c
+				stacks/inv_ops/inv_rrotate.c stacks/clone_stacks.c \
+				stacks/print_stacks.c stacks/inv_ops/inv_op_utils.c
 
-OBJS		=	${SRCS:.c=.o}
-
-OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
+OBJS		:=	${SRCS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=address
 
 INCLUDE		=	includes/
 
 LIBS		=	libs/libft/libft.a
+
+BUILD		=	build/
 
 all		:	$(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:20:23 by jmaia             #+#    #+#             */
-/*   Updated: 2021/11/25 09:28:47 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 14:09:31 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*end;
+	t_list	*old_last;
 
 	if (lst == 0)
 		return ;
@@ -23,8 +23,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	end = *lst;
-	while (end->next)
-		end = end->next;
-	end->next = new;
+	old_last = ft_lstlast(*lst);
+	old_last->next = new;
+	new->previous = old_last;
 }

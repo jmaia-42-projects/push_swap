@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/13 12:38:34 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 15:33:24 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,20 @@ static int		print_error(void);
 
 int	main(int ac, char **av)
 {
-	t_stack		*stack_a;
 	t_stacks	*stacks;
 
 	if (ac == 1)
 		return (0);
-	stack_a = parse_stack_a(ac, av);
-	stacks = get_stacks(stack_a, 0);
+	stacks = get_stacks(0, 0);
+	if (!stacks)
+		return (print_error());
+	stacks->stack_a = parse_stack_a(ac, av);
+	stacks->stack_b = get_stack();
+	if (!stacks->stack_a || !stacks->stack_b)
+	{
+		free_stacks(stacks, 1);
+		return (print_error());
+	}
 	print_sort(stacks);
 	free_stacks(stacks, 1);
 	return (0);
@@ -44,14 +51,16 @@ static t_stack	*parse_stack_a(int ac, char **av)
 	err = !check_args(ac, av);
 	if (err)
 		exit(print_error());
-	i = 1;
+	i = ac - 1;
 	stack = get_stack();
-	while (i < ac && !err)
+	if (!stack)
+		return (0);
+	while (i >= 1 && !err)
 	{
 		err = !push_elem(stack, atoi(av[i]));
 		if (err)
-			ft_lstclear(&stack->list, &free);
-		i++;
+			ft_lstppclear(&stack->lstpp, &free);
+		i--;
 	}
 	if (err)
 		print_error();

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:27:56 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 13:34:11 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/20 22:06:07 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,15 @@ void	rb(t_stacks *stacks)
 
 static void	rotate(t_stack *stack)
 {
-	t_list	**list;
-	t_list	*node_1;
-	t_list	*node_2;
+	t_list	*new_begin;
+	t_list	*new_end;
 
-	list = &stack->list;
-	if (*list == 0 || (*list)->next == 0)
+	if (!stack->lstpp->begin || !stack->lstpp->begin->next)
 		return ;
-	node_1 = *list;
-	node_2 = node_1->next;
-	ft_lstadd_back(list, node_1);
-	*list = node_2;
-	node_1->next = 0;
+	new_begin = stack->lstpp->begin->next;
+	new_end = stack->lstpp->begin;
+	ft_lstset_next(stack->lstpp->end, stack->lstpp->begin);
+	ft_lstbreaklink(new_end, new_begin);
+	stack->lstpp->begin = new_begin;
+	stack->lstpp->end = new_end;
 }

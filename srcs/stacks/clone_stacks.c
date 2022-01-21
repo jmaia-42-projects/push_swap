@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_elem.c                                        :+:      :+:    :+:   */
+/*   clone_stacks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 14:04:18 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:03:16 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/17 16:08:06 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/20 14:41:17 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stacks.h"
 
-int	push_elem(t_stack *stack, int elem)
-{
-	t_list	*node;
-	int		*elem_ptr;
+t_stacks	*clone_stacks(t_stacks *stacks)
+{	
+	t_stacks	*clone;
 
-	elem_ptr = malloc(sizeof(*elem_ptr));
-	if (!elem_ptr)
+	clone = malloc(sizeof(*clone));
+	if (!clone)
 		return (0);
-	*elem_ptr = elem;
-	node = ft_lstnew(elem_ptr);
-	if (!node)
+	clone->stack_a = get_stack();
+	clone->stack_b = get_stack();
+	if (!clone->stack_a || !clone->stack_b)
 	{
-		free(elem_ptr);
+		free_stacks(clone, 0);
 		return (0);
 	}
-	ft_lstppadd_front(stack->lstpp, node);
-	return (1);
+	free(clone->stack_a->lstpp);
+	free(clone->stack_b->lstpp);
+	clone->stack_a->lstpp = ft_lstppcpy(stacks->stack_a->lstpp);
+	clone->stack_b->lstpp = ft_lstppcpy(stacks->stack_b->lstpp);
+	return (clone);
 }

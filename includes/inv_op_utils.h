@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stacks.c                                      :+:      :+:    :+:   */
+/*   inv_op_utils.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 15:22:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:04:27 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/21 15:35:44 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/21 15:46:42 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
-#include <stdlib.h>
+#ifndef INV_OP_UTILS_H
+# define INV_OP_UTILS_H
 
-void	free_stacks(t_stacks *stacks, int do_free_content)
-{
-	free_stack(stacks->stack_a, do_free_content);
-	free_stack(stacks->stack_b, do_free_content);
-	free(stacks);
-}
+# include "ops.h"
+# include "libft.h"
+# include "inv_ops.h"
 
-void	free_stack(t_stack *stack, int do_free_content)
-{
-	if (do_free_content)
-		ft_lstppclear(&stack->lstpp, &free);
-	else
-		ft_lstppclear(&stack->lstpp, 0);
-	free(stack);
-}
+const char	*get_inv_op_of(const char *op);
+void		init_inv_ops(t_ops inv_ops[11]);
+
+#endif
