@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/20 17:53:54 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 15:33:24 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,6 @@ static int	check_args(int ac, char **av)
 
 static int	print_error(void)
 {
-	ssize_t	pouet;
-	
-	pouet = write(2, "Error\n", 6);
-	(void) pouet;
+	write(2, "Error\n", 6);
 	return (1);
 }

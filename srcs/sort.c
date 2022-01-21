@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 14:36:33 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 15:44:03 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,9 @@ static t_sort	*init_sorter(t_stacks *stacks)
 		sorter->the_list = ft_lstppnew(lst, lst);
 	}
 	if (!sorter->sorted_list || !sorter->the_list)
-	{
 		free_sorter(&sorter);
+	if (!sorter->sorted_list || !sorter->the_list)
 		return (0);
-	}
 	return (sorter);
 }
 
@@ -74,7 +73,7 @@ static int	intcmp(void *v1, void *v2)
 void	free_sorter(t_sort **sorter)
 {
 	ft_lstppclear(&(*sorter)->sorted_list, 0);
-	ft_lstppclear(&(*sorter)->the_list, &free_path_but_content);
+	ft_lstppclear(&(*sorter)->the_list, &free_path_wrapper);
 	free(*sorter);
 	*sorter = 0;
 }
