@@ -1,10 +1,11 @@
-SRCS		=	main.c sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
+SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c \
-				stacks/free_stacks.c stacks/get_stack.c print_path.c \
-				find_path.c path.c stacks/inv_ops/inv_swap.c \
+				stacks/free_stacks.c stacks/get_stack.c less_six/print_path.c \
+				less_six/find_path.c less_six/path.c stacks/inv_ops/inv_swap.c \
 				stacks/inv_ops/inv_push.c stacks/inv_ops/inv_rotate.c \
 				stacks/inv_ops/inv_rrotate.c stacks/clone_stacks.c \
-				stacks/print_stacks.c stacks/inv_ops/inv_op_utils.c
+				stacks/print_stacks.c stacks/inv_ops/inv_op_utils.c \
+				general/sort_general.c
 
 OBJS		:=	${SRCS:.c=.o}
 

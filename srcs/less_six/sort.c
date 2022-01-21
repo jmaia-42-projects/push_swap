@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:44:03 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 16:57:15 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static t_sort	*init_sorter(t_stacks *stacks);
 static int		intcmp(void *v1, void *v2);
 
-void	print_sort(t_stacks *stacks)
+void	print_sort_less_six(t_stacks *stacks)
 {
 	t_sort	*sorter;
 	t_path	*path;

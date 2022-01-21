@@ -6,16 +6,18 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:33:24 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/21 17:01:36 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "stacks.h"
 #include "libft.h"
+
+#include "stacks.h"
 #include "sort.h"
+#include "sort_general.h"
 
 static t_stack	*parse_stack_a(int ac, char **av);
 static int		check_args(int ac, char **av);
@@ -37,7 +39,10 @@ int	main(int ac, char **av)
 		free_stacks(stacks, 1);
 		return (print_error());
 	}
-	print_sort(stacks);
+	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 6)
+		print_sort_less_six(stacks);
+	else
+		print_sort_general(stacks);
 	free_stacks(stacks, 1);
 	return (0);
 }

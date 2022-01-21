@@ -1,3 +1,5 @@
 *.o
+*.swp
 README
 push_swap
+checker_linux
