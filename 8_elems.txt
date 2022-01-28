@@ -1,0 +1,1 @@
+Args: 4.5Gi /usr/bin/time ./push_swap 1 7 3 6 5 2 4 8
