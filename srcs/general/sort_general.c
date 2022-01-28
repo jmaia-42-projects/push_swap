@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/28 13:03:26 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/28 14:41:54 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	print_sort_general(t_stacks *stacks)
 {
 //	int	top_a;
 	int	count;
-//	int	count2;
-//	int	i;
+	int	count2;
+	int	i;
 
 	(void) get_max;
 	//max = get_max(stacks->stack_a);
@@ -40,8 +40,40 @@ void	print_sort_general(t_stacks *stacks)
 		while (!can_i_put_it_here(stacks->stack_a, *(int *)stacks->stack_b->lstpp->begin->content))
 		{
 			ra(stacks);
-			write(1, "ra\n", 3);
 			count++;
+		}
+		i = 0;
+		while (i < count)
+		{
+			rra(stacks);
+			i++;
+		}
+		count2 = 0;
+		while (!can_i_put_it_here(stacks->stack_a, *(int *)stacks->stack_b->lstpp->begin->content))
+		{
+			rra(stacks);
+			count2++;
+		}
+		i = 0;
+		while (i < count2)
+		{
+			ra(stacks);
+			i++;
+		}
+		i = 0;
+		while (i < count && i < count2)
+		{
+			if (count < count2)
+			{
+				write(1, "ra\n", 3);
+				ra(stacks);
+			}
+			else
+			{
+				write(1, "rra\n", 4);
+				rra(stacks);
+			}
+			i++;
 		}
 		pa(stacks);
 		write(1, "pa\n", 3);
