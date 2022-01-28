@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_stack.c                                        :+:      :+:    :+:   */
+/*   checksum.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 16:36:34 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/28 16:22:50 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/28 17:39:42 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/28 17:39:55 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stacks.h"
+#ifndef CHECKSUM_H
+# define CHECKSUM_H
 
-t_stack	*get_stack(void)
-{
-	t_stack	*stack;
+int	checksum(int a, int b);
 
-	stack = malloc(sizeof(*stack));
-	if (!stack)
-		return (0);
-	stack->lstpp = ft_lstppnew(0, 0);
-	if (!stack->lstpp)
-	{
-		free(stack);
-		return (0);
-	}
-	stack->checksum = 0;
-	return (stack);
-}
+#endif

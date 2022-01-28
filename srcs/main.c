@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/27 18:08:53 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/28 18:31:22 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,10 @@ int	main(int ac, char **av)
 		free_stacks(stacks, 1);
 		return (print_error());
 	}
-//	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 6)
-//		print_sort_less_six(stacks);
-//	write(1, "------------------\n", 19);
+	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 10)
+		print_sort_less_six(stacks);
 //	else
-	print_sort_general(stacks);
+//		print_sort_general(stacks);
 	free_stacks(stacks, 1);
 	return (0);
 }

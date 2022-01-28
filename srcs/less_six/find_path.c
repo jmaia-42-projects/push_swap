@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 16:54:52 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/28 18:23:32 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,11 +114,14 @@ static int	is_stacks_present(t_listpp *the_list, t_stacks *stacks)
 	while (cur)
 	{
 		cur_stacks = ((t_path *) cur->content)->stacks;
-		if (ft_lstequals(cur_stacks->stack_a->lstpp->begin,
-				stacks->stack_a->lstpp->begin)
-			&& ft_lstequals(cur_stacks->stack_b->lstpp->begin,
-				stacks->stack_b->lstpp->begin))
-			return (1);
+		if (cur_stacks->stack_a->checksum == stacks->stack_a->checksum && cur_stacks->stack_b->checksum == stacks->stack_b->checksum)
+		{
+			if (ft_lstequals(cur_stacks->stack_a->lstpp->begin,
+						stacks->stack_a->lstpp->begin)
+					&& ft_lstequals(cur_stacks->stack_b->lstpp->begin,
+						stacks->stack_b->lstpp->begin))
+				return (1);
+		}
 		cur = cur->next;
 	}
 	return (0);

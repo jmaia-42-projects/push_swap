@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 10:43:41 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 13:13:07 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/28 17:38:25 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 # define STACKS_H
 
 # include <stdlib.h>
+
 # include "libft.h"
+
+# include "checksum.h"
 
 typedef struct s_stack
 {
 	t_listpp	*lstpp;
+	int			checksum;
 }	t_stack;
 
 typedef struct s_stacks

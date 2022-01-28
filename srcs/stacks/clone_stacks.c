@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:08:06 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/20 14:41:17 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/28 18:46:08 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ t_stacks	*clone_stacks(t_stacks *stacks)
 	free(clone->stack_b->lstpp);
 	clone->stack_a->lstpp = ft_lstppcpy(stacks->stack_a->lstpp);
 	clone->stack_b->lstpp = ft_lstppcpy(stacks->stack_b->lstpp);
+	clone->stack_a->checksum = stacks->stack_a->checksum;
+	clone->stack_b->checksum = stacks->stack_b->checksum;
 	return (clone);
 }

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:05:29 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:30:25 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/28 19:05:38 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	sb(t_stacks *stacks)
 	swap(stacks->stack_b);
 }
 
+#include <stdio.h>
+
+void	print_stack(t_stack *stack);
+
 static void	swap(t_stack *stack)
 {
 	t_list	*node_1;
@@ -38,6 +42,14 @@ static void	swap(t_stack *stack)
 
 	if (!stack->lstpp->begin || !stack->lstpp->begin->next)
 		return ;
+//	printf("CHECKSUM BEFORE SWAP : %d\n", stack->checksum);
+//	print_stack(stack);
+	if (stack->lstpp->begin->next->next)
+	{
+		stack->checksum -= checksum(*(int *)stack->lstpp->end->content, *(int *)stack->lstpp->begin->content);
+		stack->checksum -= checksum(*(int *)stack->lstpp->begin->content, *(int *)stack->lstpp->begin->next->content);
+		stack->checksum -= checksum(*(int *)stack->lstpp->begin->next->content, *(int *)stack->lstpp->begin->next->next->content);
+	}
 	node_1 = stack->lstpp->begin;
 	node_2 = node_1->next;
 	node_3 = node_2->next;
@@ -46,4 +58,11 @@ static void	swap(t_stack *stack)
 	stack->lstpp->begin = node_2;
 	if (!node_3)
 		stack->lstpp->end = node_1;
+	if (stack->lstpp->begin->next->next)
+	{
+		stack->checksum += checksum(*(int *)stack->lstpp->end->content, *(int *)stack->lstpp->begin->content);
+		stack->checksum += checksum(*(int *)stack->lstpp->begin->content, *(int *)stack->lstpp->begin->next->content);
+		stack->checksum += checksum(*(int *)stack->lstpp->begin->next->content, *(int *)stack->lstpp->begin->next->next->content);
+	}
+//	printf("CHECKSUM AFTER SWAP : %d\n", stack->checksum);
 }
