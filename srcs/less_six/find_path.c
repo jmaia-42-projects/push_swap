@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/28 21:24:34 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/29 14:47:39 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 		{
 			path = find_stacks_present(children, stacks);
 			if (path)
+			{
 				path_found = get_parent_path_depth((t_path *) cur->content);
+				return (path);
+			}
 		}
 		cur = cur->next;
 	}
@@ -75,8 +78,8 @@ t_path	*find_stacks_present(t_list *lst, t_stacks *stacks)
 				stacks->stack_b->lstpp->begin))
 		{
 			is_yes = (t_path *)cur->content;
-			print_path((t_path *) cur->content);
-			printf("----------------------\n");
+			//print_path((t_path *) cur->content);
+			//printf("----------------------\n");
 		}
 		cur = cur->next;
 	}
@@ -110,8 +113,8 @@ static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
 	t_path	*child;
 	t_list	*child_lst;
 
-//	if (p_path->op && !ft_strcmp(op.op_name, get_inv_op_of(p_path->op)))
-//		return (0);
+	if (p_path->op && !ft_strcmp(op.op_name, get_inv_op_of(p_path->op)))
+		return (0);
 	child = get_path(0, p_path, op.op_name);
 	child->stacks = clone_stacks(p_path->stacks);
 	if (!child->stacks)
@@ -121,11 +124,11 @@ static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
 	}
 	(void) is_stacks_present;
 	op.inv_op(child->stacks);
-//	if (is_stacks_present(the_list, child->stacks))
-//	{
-//		free_path(&child);
-//		return (0);
-//	}
+	if (is_stacks_present(the_list, child->stacks))
+	{
+		free_path(&child);
+		return (0);
+	}
 	child_lst = ft_lstnew(child);
 	ft_lstppadd_back(the_list, child_lst);
 	return (child_lst);

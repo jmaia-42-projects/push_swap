@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/22 16:10:50 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/29 14:46:07 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	print_sort_less_six(t_stacks *stacks)
 	path = find_stacks_present(sorter->the_list->begin, stacks);
 	if (!path)
 		path = find_path(sorter, stacks);
-//	if (path)
-//		print_path(path);
+	if (path)
+		print_path(path);
 	free_sorter(&sorter);
 }
 
