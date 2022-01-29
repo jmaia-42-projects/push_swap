@@ -1,17 +1,23 @@
-SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
+SRCS		=	main.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/rrotate.c stacks/push_elem.c stacks/get_stacks.c \
-				stacks/free_stacks.c stacks/get_stack.c less_six/print_path.c \
-				less_six/find_path.c less_six/path.c stacks/inv_ops/inv_swap.c \
+				stacks/free_stacks.c stacks/get_stack.c \
+				stacks/inv_ops/inv_swap.c \
 				stacks/inv_ops/inv_push.c stacks/inv_ops/inv_rotate.c \
 				stacks/inv_ops/inv_rrotate.c stacks/clone_stacks.c \
-				stacks/print_stacks.c stacks/inv_ops/inv_op_utils.c \
-				general/sort_general.c
+				stacks/print_stacks.c \
+				general/sort_general.c \
+				general/find_path.c \
+				general/get_series_strength.c \
+				general/path.c \
+				general/print_path.c \
+				stacks/init_ops.c \
+				stacks/inv_ops/inv_op_utils.c
 
 OBJS		:=	${SRCS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -pg -g3 -O0 #-fsanitize=address
 
 INCLUDE		=	includes/
 

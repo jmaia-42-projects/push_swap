@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops.h                                              :+:      :+:    :+:   */
+/*   get_series_strength.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 14:59:52 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/29 17:28:47 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/29 15:57:54 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/29 17:24:17 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPS_H
-# define OPS_H
+#ifndef GET_SERIES_STRENGTH
+# define GET_SERIES_STRENGTH
 
-# include "stacks.h"
+#include "stacks.h"
+#include "libft.h"
 
-typedef struct s_ops
-{
-	void		(*op)(t_stacks *);
-	const char	*op_name;
-}	t_ops;
+int	get_series_strength(t_stacks *stacks);
 
 #endif

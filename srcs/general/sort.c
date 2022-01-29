@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.c                                     :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/29 17:27:38 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/29 16:44:26 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 static t_sort	*init_sorter(t_stacks *stacks);
 static int		intcmp(void *v1, void *v2);
-t_path	*find_stacks_present(t_list *, t_stacks *);
 
-void	print_sort_general(t_stacks *stacks)
+void	print_sort_less_six(t_stacks *stacks)
 {
 	t_sort	*sorter;
 	t_path	*path;
@@ -35,6 +34,7 @@ void	print_sort_general(t_stacks *stacks)
 static t_sort	*init_sorter(t_stacks *stacks)
 {
 	t_sort		*sorter;
+	t_stack		*stack_a_the_list;
 	t_stacks	*stacks_the_list;
 	t_path		*path_the_list;
 	t_list		*lst;
