@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 11:05:48 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:19:36 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/22 16:47:38 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_stacks(t_stacks *stacks)
 {
 	ft_putstr_fd("Stack A: ", 1);
 	print_stack(stacks->stack_a);
-	ft_putstr_fd("\nStack B: ", 1);
+	ft_putstr_fd(" Stack B: ", 1);
 	print_stack(stacks->stack_b);
 	ft_putstr_fd("\n", 1);
 }
