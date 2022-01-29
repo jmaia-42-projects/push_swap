@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/29 21:09:07 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/29 22:02:13 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ static t_list		*append_stacks_children(t_listpp *the_list, t_list *cur);
 static t_list		*append_child_if_absent(t_listpp *the_list, t_path *cur,
 						t_ops op);
 static int			is_stacks_present(t_listpp *the_list, t_stacks *stacks);
-static t_list	*find_better_stacks(t_list *lst, int *current_series_strength);
+static t_list	*find_better_stacks(t_list *lst, int **current_series_strengths);
 t_path	*find_stacks_present(t_list *lst, t_listpp *list);
 void	init_ops(t_ops ops[11]);
+static int	is_better(int *strength1, int *strength2);
 
 #include <stdio.h>
 
@@ -31,19 +32,19 @@ t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 	t_list	*children;
 	t_list	*cur;
 	t_list	*ALED;
-	int		current_series_strength;
+	int		*current_series_strengths;
 	int		i_path;
 
 	path = 0;
 	i_path = 0;
 	cur = sorter->the_list->begin;
-	current_series_strength = get_series_strength(stacks);
+	current_series_strengths = get_series_strength(stacks);
 	while (cur)
 	{
 		children = append_stacks_children(sorter->the_list, cur);
 		if (children)
 		{
-			ALED = find_better_stacks(children, &current_series_strength);
+			ALED = find_better_stacks(children, &current_series_strengths);
 			if (ALED)
 			{
 				pathes[i_path++] = (t_path *)ALED->content;
@@ -73,7 +74,7 @@ t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 	return (path);
 }
 
-static t_list	*find_better_stacks(t_list *lst, int *current_series_strength)
+static t_list	*find_better_stacks(t_list *lst, int **current_series_strength)
 {
 	t_list	*better_path;
 	t_list	*cur;
@@ -82,7 +83,7 @@ static t_list	*find_better_stacks(t_list *lst, int *current_series_strength)
 	cur = lst;
 	while (cur)
 	{
-		if (get_series_strength(((t_path *)cur->content)->stacks) > *current_series_strength)
+		if (is_better(get_series_strength(((t_path *)cur->content)->stacks), *current_series_strength))
 		{
 			*current_series_strength = get_series_strength(((t_path *)cur->content)->stacks);
 			better_path = cur;
@@ -90,6 +91,22 @@ static t_list	*find_better_stacks(t_list *lst, int *current_series_strength)
 		cur = cur->next;
 	}
 	return (better_path);
+}
+
+static int	is_better(int *strength1, int *strength2)
+{
+	int	i;
+
+	i = 0;
+	while (i < 5)
+	{
+		if (strength1[i] > strength2[i])
+			return (1);
+		else if(strength1[i] < strength2[i])
+			return (0);
+		i++;
+	}
+	return (0);
 }
 
 t_path	*find_stacks_present(t_list *lst, t_listpp *list)

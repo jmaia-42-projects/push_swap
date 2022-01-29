@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 15:57:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/29 17:24:17 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/29 21:59:48 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 #include "stacks.h"
 #include "libft.h"
 
-int	get_series_strength(t_stacks *stacks);
+int	*get_series_strength(t_stacks *stacks);
 
 #endif
