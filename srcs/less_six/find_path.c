@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 16:54:52 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/30 15:41:40 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
 	t_list	*child_lst;
 
 	if (p_path->op && !ft_strcmp(op.op_name, get_inv_op_of(p_path->op)))
+		return (0);
+	if (((!ft_strcmp(op.op_name, "sb") || !ft_strcmp(op.op_name, "ss") || !ft_strcmp(op.op_name, "rb") || !ft_strcmp(op.op_name, "rr") || !ft_strcmp(op.op_name, "rrb") || !ft_strcmp(op.op_name, "rrr")) && (!p_path->stacks->stack_b->lstpp->begin || !p_path->stacks->stack_b->lstpp->begin->next)) || (!ft_strcmp(op.op_name, "pb") && !p_path->stacks->stack_b->lstpp->begin))
 		return (0);
 	child = get_path(0, p_path, op.op_name);
 	child->stacks = clone_stacks(p_path->stacks);
