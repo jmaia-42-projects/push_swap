@@ -1,0 +1,710 @@
+Command terminated by signal 9
+18.36user 2.01system 0:20.61elapsed 98%CPU (0avgtext+0avgdata 4003916maxresident)k
+272inputs+0outputs (6major+1001020minor)pagefaults 0swaps
+pb
+pb
+ss
+rra
+sa
+pa
+rra
+pa
+ra
+Stack A: 2 7 5 3 6 1 4  Stack B: 
+Stack A: 7 5 3 6 1 4  Stack B: 2 
+Stack A: 5 3 6 1 4  Stack B: 7 2 
+Stack A: 3 5 6 1 4  Stack B: 2 7 
+Stack A: 4 3 5 6 1  Stack B: 2 7 
+Stack A: 3 4 5 6 1  Stack B: 2 7 
+Stack A: 2 3 4 5 6 1  Stack B: 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+sa
+rrr
+sa
+pa
+rra
+pa
+ra
+Stack A: 2 7 5 3 6 1 4  Stack B: 
+Stack A: 7 5 3 6 1 4  Stack B: 2 
+Stack A: 5 3 6 1 4  Stack B: 7 2 
+Stack A: 3 5 6 1 4  Stack B: 7 2 
+Stack A: 4 3 5 6 1  Stack B: 2 7 
+Stack A: 3 4 5 6 1  Stack B: 2 7 
+Stack A: 2 3 4 5 6 1  Stack B: 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+sa
+rra
+ss
+pa
+rra
+pa
+ra
+Stack A: 2 7 5 3 6 1 4  Stack B: 
+Stack A: 7 5 3 6 1 4  Stack B: 2 
+Stack A: 5 3 6 1 4  Stack B: 7 2 
+Stack A: 3 5 6 1 4  Stack B: 7 2 
+Stack A: 4 3 5 6 1  Stack B: 7 2 
+Stack A: 3 4 5 6 1  Stack B: 2 7 
+Stack A: 2 3 4 5 6 1  Stack B: 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ss
+rrr
+ss
+pa
+rra
+pa
+ra
+Stack A: 2 7 5 3 6 1 4  Stack B: 
+Stack A: 7 5 3 6 1 4  Stack B: 2 
+Stack A: 5 3 6 1 4  Stack B: 7 2 
+Stack A: 3 5 6 1 4  Stack B: 2 7 
+Stack A: 4 3 5 6 1  Stack B: 7 2 
+Stack A: 3 4 5 6 1  Stack B: 2 7 
+Stack A: 2 3 4 5 6 1  Stack B: 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+Command terminated by signal 9
+19.15user 2.40system 0:23.00elapsed 93%CPU (0avgtext+0avgdata 4000904maxresident)k
+6808inputs+8outputs (113major+1000344minor)pagefaults 0swaps
+pb
+pb
+rr
+ra
+sa
+ra
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 3 2 
+Stack A: 4 1 5 6 7  Stack B: 3 2 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ra
+rr
+sa
+ra
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 2 3 
+Stack A: 4 1 5 6 7  Stack B: 3 2 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ra
+ra
+ss
+ra
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 2 3 
+Stack A: 4 1 5 6 7  Stack B: 2 3 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+rr
+rr
+ss
+ra
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 3 2 
+Stack A: 4 1 5 6 7  Stack B: 2 3 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ra
+ra
+sa
+rr
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 2 3 
+Stack A: 4 1 5 6 7  Stack B: 2 3 
+Stack A: 1 4 5 6 7  Stack B: 2 3 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+rr
+rr
+sa
+rr
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 3 2 
+Stack A: 4 1 5 6 7  Stack B: 2 3 
+Stack A: 1 4 5 6 7  Stack B: 2 3 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+rr
+ra
+ss
+rr
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 3 2 
+Stack A: 4 1 5 6 7  Stack B: 3 2 
+Stack A: 1 4 5 6 7  Stack B: 2 3 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ra
+rr
+ss
+rr
+pa
+pa
+rra
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 2 3 
+Stack A: 4 1 5 6 7  Stack B: 3 2 
+Stack A: 1 4 5 6 7  Stack B: 2 3 
+Stack A: 4 5 6 7 1  Stack B: 3 2 
+Stack A: 3 4 5 6 7 1  Stack B: 2 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+rr
+ra
+sa
+pa
+sa
+pa
+sa
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 3 2 
+Stack A: 4 1 5 6 7  Stack B: 3 2 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 3 1 4 5 6 7  Stack B: 2 
+Stack A: 1 3 4 5 6 7  Stack B: 2 
+Stack A: 2 1 3 4 5 6 7  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ra
+rr
+sa
+pa
+sa
+pa
+sa
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 2 3 
+Stack A: 4 1 5 6 7  Stack B: 3 2 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 3 1 4 5 6 7  Stack B: 2 
+Stack A: 1 3 4 5 6 7  Stack B: 2 
+Stack A: 2 1 3 4 5 6 7  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+ra
+ra
+ss
+pa
+sa
+pa
+sa
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 2 3 
+Stack A: 4 1 5 6 7  Stack B: 2 3 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 3 1 4 5 6 7  Stack B: 2 
+Stack A: 1 3 4 5 6 7  Stack B: 2 
+Stack A: 2 1 3 4 5 6 7  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+pb
+rr
+rr
+ss
+pa
+sa
+pa
+sa
+Stack A: 3 2 6 7 4 1 5  Stack B: 
+Stack A: 2 6 7 4 1 5  Stack B: 3 
+Stack A: 6 7 4 1 5  Stack B: 2 3 
+Stack A: 7 4 1 5 6  Stack B: 3 2 
+Stack A: 4 1 5 6 7  Stack B: 2 3 
+Stack A: 1 4 5 6 7  Stack B: 3 2 
+Stack A: 3 1 4 5 6 7  Stack B: 2 
+Stack A: 1 3 4 5 6 7  Stack B: 2 
+Stack A: 2 1 3 4 5 6 7  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+Command terminated by signal 9
+18.96user 2.60system 0:23.07elapsed 93%CPU (0avgtext+0avgdata 3882276maxresident)k
+10728inputs+24outputs (135major+970675minor)pagefaults 0swaps
+Command terminated by signal 9
+19.97user 2.36system 0:22.97elapsed 97%CPU (0avgtext+0avgdata 4326040maxresident)k
+5824inputs+0outputs (81major+1081590minor)pagefaults 0swaps
+rra
+pb
+ra
+pb
+ra
+sa
+pa
+sa
+pa
+Stack A: 6 3 7 4 2 5 1  Stack B: 
+Stack A: 1 6 3 7 4 2 5  Stack B: 
+Stack A: 6 3 7 4 2 5  Stack B: 1 
+Stack A: 3 7 4 2 5 6  Stack B: 1 
+Stack A: 7 4 2 5 6  Stack B: 3 1 
+Stack A: 4 2 5 6 7  Stack B: 3 1 
+Stack A: 2 4 5 6 7  Stack B: 3 1 
+Stack A: 3 2 4 5 6 7  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+ra
+pb
+rr
+ss
+pa
+sa
+pa
+Stack A: 6 3 7 4 2 5 1  Stack B: 
+Stack A: 1 6 3 7 4 2 5  Stack B: 
+Stack A: 6 3 7 4 2 5  Stack B: 1 
+Stack A: 3 7 4 2 5 6  Stack B: 1 
+Stack A: 7 4 2 5 6  Stack B: 3 1 
+Stack A: 4 2 5 6 7  Stack B: 1 3 
+Stack A: 2 4 5 6 7  Stack B: 3 1 
+Stack A: 3 2 4 5 6 7  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+Command terminated by signal 9
+19.99user 2.33system 0:23.40elapsed 95%CPU (0avgtext+0avgdata 4681232maxresident)k
+4944inputs+16outputs (75major+1170372minor)pagefaults 0swaps
+Command terminated by signal 9
+18.45user 2.31system 0:21.34elapsed 97%CPU (0avgtext+0avgdata 3918908maxresident)k
+4216inputs+0outputs (72major+979790minor)pagefaults 0swaps
+Command terminated by signal 9
+20.16user 2.51system 0:23.33elapsed 97%CPU (0avgtext+0avgdata 4316036maxresident)k
+2208inputs+0outputs (57major+1079050minor)pagefaults 0swaps
+Command terminated by signal 9
+17.78user 2.16system 0:20.95elapsed 95%CPU (0avgtext+0avgdata 3737088maxresident)k
+4392inputs+0outputs (54major+934364minor)pagefaults 0swaps
+rra
+rra
+sa
+ra
+sa
+ra
+sa
+Stack A: 7 1 3 4 5 2 6  Stack B: 
+Stack A: 6 7 1 3 4 5 2  Stack B: 
+Stack A: 2 6 7 1 3 4 5  Stack B: 
+Stack A: 6 2 7 1 3 4 5  Stack B: 
+Stack A: 2 7 1 3 4 5 6  Stack B: 
+Stack A: 7 2 1 3 4 5 6  Stack B: 
+Stack A: 2 1 3 4 5 6 7  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+rra
+pb
+ra
+ra
+pa
+sa
+Stack A: 7 1 3 4 5 2 6  Stack B: 
+Stack A: 6 7 1 3 4 5 2  Stack B: 
+Stack A: 2 6 7 1 3 4 5  Stack B: 
+Stack A: 6 7 1 3 4 5  Stack B: 2 
+Stack A: 7 1 3 4 5 6  Stack B: 2 
+Stack A: 1 3 4 5 6 7  Stack B: 2 
+Stack A: 2 1 3 4 5 6 7  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+----------------------
+----------------------
+0.50user 0.06system 0:00.62elapsed 89%CPU (0avgtext+0avgdata 82952maxresident)k
+216inputs+8outputs (1major+20469minor)pagefaults 0swaps
+pb
+rra
+pb
+rra
+sa
+rra
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rrr
+sa
+rra
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rra
+ss
+rra
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rrr
+ss
+rra
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rra
+sa
+rrr
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rrr
+sa
+rrr
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rra
+ss
+rrr
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rrr
+ss
+rrr
+pa
+pa
+ra
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rra
+sa
+rra
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rrr
+sa
+rra
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rra
+ss
+rra
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rrr
+ss
+rra
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 7 1 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rra
+sa
+rrr
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rrr
+sa
+rrr
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 1 7 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+pb
+rra
+ss
+rrr
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 1 7 3 5 6 2 4  Stack B: 
+Stack A: 7 3 5 6 2 4  Stack B: 1 
+Stack A: 3 5 6 2 4  Stack B: 7 1 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+pb
+rrr
+ss
+rrr
+pa
+ra
+pa
+Stack A: 7 3 5 6 2 4 1  Stack B: 
+Stack A: 3 5 6 2 4 1  Stack B: 7 
+Stack A: 1 3 5 6 2 4  Stack B: 7 
+Stack A: 3 5 6 2 4  Stack B: 1 7 
+Stack A: 4 3 5 6 2  Stack B: 7 1 
+Stack A: 3 4 5 6 2  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+Command terminated by signal 9
+17.22user 2.26system 0:21.26elapsed 91%CPU (0avgtext+0avgdata 3550672maxresident)k
+5448inputs+24outputs (74major+887779minor)pagefaults 0swaps
+Command terminated by signal 9
+18.37user 2.50system 0:23.80elapsed 87%CPU (0avgtext+0avgdata 3910172maxresident)k
+7232inputs+0outputs (92major+977627minor)pagefaults 0swaps

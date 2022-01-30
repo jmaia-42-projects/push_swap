@@ -1,0 +1,252 @@
+Command terminated by signal 9
+18.75user 2.07system 0:22.03elapsed 94%CPU (0avgtext+0avgdata 4152620maxresident)k
+5208inputs+0outputs (50major+1038220minor)pagefaults 0swaps
+Command terminated by signal 9
+19.04user 2.27system 0:21.97elapsed 97%CPU (0avgtext+0avgdata 4141864maxresident)k
+3368inputs+0outputs (77major+1035563minor)pagefaults 0swaps
+Command terminated by signal 9
+19.34user 2.39system 0:23.48elapsed 92%CPU (0avgtext+0avgdata 4037304maxresident)k
+10424inputs+0outputs (135major+1009437minor)pagefaults 0swaps
+Command terminated by signal 9
+20.21user 2.39system 0:23.12elapsed 97%CPU (0avgtext+0avgdata 4321892maxresident)k
+4208inputs+0outputs (67major+1080547minor)pagefaults 0swaps
+ra
+pb
+ra
+pb
+ra
+sa
+pa
+sa
+pa
+Stack A: 5 1 6 3 7 4 2  Stack B: 
+Stack A: 1 6 3 7 4 2 5  Stack B: 
+Stack A: 6 3 7 4 2 5  Stack B: 1 
+Stack A: 3 7 4 2 5 6  Stack B: 1 
+Stack A: 7 4 2 5 6  Stack B: 3 1 
+Stack A: 4 2 5 6 7  Stack B: 3 1 
+Stack A: 2 4 5 6 7  Stack B: 3 1 
+Stack A: 3 2 4 5 6 7  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+ra
+pb
+ra
+pb
+rr
+ss
+pa
+sa
+pa
+Stack A: 5 1 6 3 7 4 2  Stack B: 
+Stack A: 1 6 3 7 4 2 5  Stack B: 
+Stack A: 6 3 7 4 2 5  Stack B: 1 
+Stack A: 3 7 4 2 5 6  Stack B: 1 
+Stack A: 7 4 2 5 6  Stack B: 3 1 
+Stack A: 4 2 5 6 7  Stack B: 1 3 
+Stack A: 2 4 5 6 7  Stack B: 3 1 
+Stack A: 3 2 4 5 6 7  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+ra
+pb
+rr
+sa
+ra
+pa
+pa
+Stack A: 5 1 6 3 7 4 2  Stack B: 
+Stack A: 2 5 1 6 3 7 4  Stack B: 
+Stack A: 5 1 6 3 7 4  Stack B: 2 
+Stack A: 1 6 3 7 4 5  Stack B: 2 
+Stack A: 6 3 7 4 5  Stack B: 1 2 
+Stack A: 3 7 4 5 6  Stack B: 2 1 
+Stack A: 7 3 4 5 6  Stack B: 2 1 
+Stack A: 3 4 5 6 7  Stack B: 2 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+rra
+pb
+ra
+pb
+ra
+ss
+ra
+pa
+pa
+Stack A: 5 1 6 3 7 4 2  Stack B: 
+Stack A: 2 5 1 6 3 7 4  Stack B: 
+Stack A: 5 1 6 3 7 4  Stack B: 2 
+Stack A: 1 6 3 7 4 5  Stack B: 2 
+Stack A: 6 3 7 4 5  Stack B: 1 2 
+Stack A: 3 7 4 5 6  Stack B: 1 2 
+Stack A: 7 3 4 5 6  Stack B: 2 1 
+Stack A: 3 4 5 6 7  Stack B: 2 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+Command terminated by signal 9
+20.98user 2.50system 0:24.53elapsed 95%CPU (0avgtext+0avgdata 4411080maxresident)k
+5824inputs+8outputs (100major+1102853minor)pagefaults 0swaps
+pb
+ra
+ra
+ra
+sa
+rra
+pa
+ra
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 6 1 3 2 4  Stack B: 7 
+Stack A: 6 1 3 2 4 5  Stack B: 7 
+Stack A: 1 3 2 4 5 6  Stack B: 7 
+Stack A: 3 2 4 5 6 1  Stack B: 7 
+Stack A: 2 3 4 5 6 1  Stack B: 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+rra
+rra
+rra
+sa
+rra
+pa
+ra
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 6 1 3 2 4  Stack B: 7 
+Stack A: 4 5 6 1 3 2  Stack B: 7 
+Stack A: 2 4 5 6 1 3  Stack B: 7 
+Stack A: 3 2 4 5 6 1  Stack B: 7 
+Stack A: 2 3 4 5 6 1  Stack B: 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+ra
+ra
+pb
+sa
+pa
+pa
+ra
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 6 1 3 2 4  Stack B: 7 
+Stack A: 6 1 3 2 4 5  Stack B: 7 
+Stack A: 1 3 2 4 5 6  Stack B: 7 
+Stack A: 3 2 4 5 6  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 1 7 
+Stack A: 1 2 3 4 5 6  Stack B: 7 
+Stack A: 7 1 2 3 4 5 6  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+sa
+ra
+sa
+ra
+ra
+ra
+sa
+rra
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 7 6 1 3 2 4  Stack B: 
+Stack A: 7 6 1 3 2 4 5  Stack B: 
+Stack A: 6 7 1 3 2 4 5  Stack B: 
+Stack A: 7 1 3 2 4 5 6  Stack B: 
+Stack A: 1 3 2 4 5 6 7  Stack B: 
+Stack A: 3 2 4 5 6 7 1  Stack B: 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+ra
+ra
+pa
+ra
+ra
+sa
+rra
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 6 1 3 2 4  Stack B: 7 
+Stack A: 6 1 3 2 4 5  Stack B: 7 
+Stack A: 1 3 2 4 5 6  Stack B: 7 
+Stack A: 7 1 3 2 4 5 6  Stack B: 
+Stack A: 1 3 2 4 5 6 7  Stack B: 
+Stack A: 3 2 4 5 6 7 1  Stack B: 
+Stack A: 2 3 4 5 6 7 1  Stack B: 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+ra
+ra
+pb
+ss
+pa
+ra
+pa
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 6 1 3 2 4  Stack B: 7 
+Stack A: 6 1 3 2 4 5  Stack B: 7 
+Stack A: 1 3 2 4 5 6  Stack B: 7 
+Stack A: 3 2 4 5 6  Stack B: 1 7 
+Stack A: 2 3 4 5 6  Stack B: 7 1 
+Stack A: 7 2 3 4 5 6  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+sa
+ra
+sa
+ra
+ra
+pb
+sa
+pa
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 7 6 1 3 2 4  Stack B: 
+Stack A: 7 6 1 3 2 4 5  Stack B: 
+Stack A: 6 7 1 3 2 4 5  Stack B: 
+Stack A: 7 1 3 2 4 5 6  Stack B: 
+Stack A: 1 3 2 4 5 6 7  Stack B: 
+Stack A: 3 2 4 5 6 7  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+pb
+ra
+ra
+pa
+ra
+pb
+sa
+pa
+Stack A: 7 5 6 1 3 2 4  Stack B: 
+Stack A: 5 6 1 3 2 4  Stack B: 7 
+Stack A: 6 1 3 2 4 5  Stack B: 7 
+Stack A: 1 3 2 4 5 6  Stack B: 7 
+Stack A: 7 1 3 2 4 5 6  Stack B: 
+Stack A: 1 3 2 4 5 6 7  Stack B: 
+Stack A: 3 2 4 5 6 7  Stack B: 1 
+Stack A: 2 3 4 5 6 7  Stack B: 1 
+Stack A: 1 2 3 4 5 6 7  Stack B: 
+----------------------
+----------------------
+----------------------
+----------------------
+----------------------
+----------------------
+----------------------
+----------------------
+4.57user 0.47system 0:05.13elapsed 98%CPU (0avgtext+0avgdata 753372maxresident)k
+928inputs+24outputs (8major+188256minor)pagefaults 0swaps
+Command terminated by signal 9
+20.20user 2.36system 0:23.16elapsed 97%CPU (0avgtext+0avgdata 4232280maxresident)k
+3584inputs+0outputs (64major+1058150minor)pagefaults 0swaps
+Command terminated by signal 9
+18.85user 2.33system 0:21.97elapsed 96%CPU (0avgtext+0avgdata 4177204maxresident)k
+2144inputs+0outputs (45major+1044357minor)pagefaults 0swaps
+Command terminated by signal 9
+18.07user 2.50system 0:21.45elapsed 95%CPU (0avgtext+0avgdata 3766028maxresident)k
+2888inputs+0outputs (54major+941593minor)pagefaults 0swaps
+Command terminated by signal 9
+18.15user 2.70system 0:23.91elapsed 87%CPU (0avgtext+0avgdata 3779672maxresident)k
+7464inputs+0outputs (122major+944994minor)pagefaults 0swaps
+Command terminated by signal 9
+18.86user 2.57system 0:24.94elapsed 85%CPU (0avgtext+0avgdata 4011780maxresident)k
+8120inputs+0outputs (98major+1003014minor)pagefaults 0swaps

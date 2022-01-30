@@ -1,0 +1,224 @@
+Args: 4.5Gi /usr/bin/time ./push_swap 6 4 3 5 2 7 1
+pb
+sa
+ra
+ra
+ra
+pa
+ra
+sa
+ra
+sa
+37.90user 0.02system 0:37.93elapsed 99%CPU (0avgtext+0avgdata 13368maxresident)k
+0inputs+8outputs (0major+3090minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 7 4 2 6 1 3 5
+pb
+rra
+sa
+ra
+ra
+sa
+ra
+pa
+ra
+sa
+38.90user 0.04system 0:38.97elapsed 99%CPU (0avgtext+0avgdata 13392maxresident)k
+0inputs+8outputs (0major+3097minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 7 5 3 2 4 6 1
+rra
+pb
+sa
+rra
+sa
+ra
+ra
+ra
+sa
+pa
+80.46user 0.17system 1:21.08elapsed 99%CPU (0avgtext+0avgdata 14212maxresident)k
+0inputs+8outputs (0major+3298minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 1 7 2 3 6 4 5
+pb
+pb
+pb
+ss
+ra
+pa
+ra
+pa
+pa
+19.58user 0.02system 0:19.61elapsed 99%CPU (0avgtext+0avgdata 10372maxresident)k
+0inputs+8outputs (0major+2345minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 6 7 1 3 5 4 2
+rra
+pb
+rra
+rra
+sa
+rra
+pa
+rra
+6.56user 0.02system 0:06.58elapsed 99%CPU (0avgtext+0avgdata 7496maxresident)k
+0inputs+8outputs (0major+1623minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 5 4 6 1 3 7 2
+sa
+ra
+ra
+ra
+pb
+sa
+ra
+sa
+pa
+17.26user 0.02system 0:17.30elapsed 99%CPU (0avgtext+0avgdata 8976maxresident)k
+0inputs+8outputs (0major+1988minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 2 7 6 1 5 3 4
+pb
+sa
+rra
+rra
+pb
+rra
+sa
+pa
+pa
+rra
+223.47user 0.72system 4:34.83elapsed 81%CPU (0avgtext+0avgdata 16544maxresident)k
+0inputs+8outputs (0major+3901minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 7 1 3 4 5 2 6
+rra
+rra
+pb
+ra
+ra
+pa
+sa
+0.09user 0.00system 0:00.22elapsed 42%CPU (0avgtext+0avgdata 2252maxresident)k
+0inputs+8outputs (0major+308minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 1 6 2 4 7 3 5
+pb
+ra
+pb
+sa
+ra
+sa
+pa
+pa
+2.47user 0.02system 0:05.05elapsed 49%CPU (0avgtext+0avgdata 4916maxresident)k
+0inputs+8outputs (0major+973minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 3 7 5 1 6 4 2
+pb
+pb
+ra
+pb
+rr
+pa
+ra
+sa
+pa
+sa
+pa
+300.83user 0.66system 10:54.57elapsed 46%CPU (0avgtext+0avgdata 17176maxresident)k
+0inputs+8outputs (0major+4062minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 6 3 4 1 7 2 5
+ra
+pb
+pb
+pb
+rr
+pa
+sa
+pa
+sa
+pa
+111.38user 0.36system 9:38.51elapsed 19%CPU (0avgtext+0avgdata 13728maxresident)k
+0inputs+8outputs (0major+3181minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 7 2 1 3 4 5 6
+ra
+sa
+0.00user 0.00system 0:00.02elapsed 5%CPU (0avgtext+0avgdata 1144maxresident)k
+0inputs+8outputs (0major+58minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 2 6 3 5 1 7 4
+pb
+pb
+ra
+ra
+pa
+ra
+pb
+rr
+sa
+pa
+pa
+341.96user 0.52system 11:34.04elapsed 49%CPU (0avgtext+0avgdata 17692maxresident)k
+0inputs+8outputs (0major+4170minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 1 6 7 4 2 3 5
+pb
+ra
+ra
+sa
+pb
+sa
+pa
+pa
+2.42user 0.01system 0:04.94elapsed 49%CPU (0avgtext+0avgdata 4808maxresident)k
+0inputs+8outputs (0major+970minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 2 1 4 3 5 7 6
+ra
+ra
+sa
+ra
+ra
+ra
+sa
+ra
+ra
+sa
+107.45user 0.35system 3:38.40elapsed 49%CPU (0avgtext+0avgdata 13564maxresident)k
+0inputs+8outputs (0major+3136minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 1 4 6 5 3 2 7
+pb
+ra
+sa
+ra
+ra
+pb
+sa
+ra
+pa
+sa
+pa
+306.55user 0.59system 10:25.71elapsed 49%CPU (0avgtext+0avgdata 17364maxresident)k
+0inputs+8outputs (0major+4083minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 6 3 7 1 2 5 4
+sa
+pb
+rra
+rra
+sa
+pa
+rra
+rra
+13.82user 0.04system 0:28.34elapsed 48%CPU (0avgtext+0avgdata 7632maxresident)k
+0inputs+8outputs (0major+1660minor)pagefaults 0swaps
+--------------------------------
+Args: 4.5Gi /usr/bin/time ./push_swap 6 3 4 2 5 1 7
+Command terminated by signal 2
+145.48user 0.34system 4:58.35elapsed 48%CPU (0avgtext+0avgdata 14568maxresident)k
+0inputs+0outputs (0major+3405minor)pagefaults 0swaps
