@@ -7,7 +7,7 @@ def read_file(path):
 
 sequences = {}
 path="/home/alpha/42/push_swap/7_elems_combined.txt"
-resolvings = read_file(path).split("--------------------------------\n");
+resolvings = read_file(path).split("-----------\n");
 for resolving in resolvings:
     resolving = resolving.split("\n")
     for len_seq in range(1, len(resolving)):

@@ -1,0 +1,7 @@
+setopt shwordsplit
+while true; do
+	ARG=$(shuf -i1-7 -n 7 | tr "\n" " ")
+	echo "ARGS: $ARG"
+	/usr/bin/time ./push_swap $ARG 2>&1
+	echo "-----------"
+done >> 7_elems3.txt
