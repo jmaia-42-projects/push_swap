@@ -11,7 +11,7 @@ OBJS		:=	${SRCS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 -O0 #-fsanitize=address
 
 INCLUDE		=	includes/
 

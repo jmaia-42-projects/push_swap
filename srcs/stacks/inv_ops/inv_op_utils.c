@@ -6,11 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 15:35:12 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/30 14:28:42 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/30 15:35:35 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inv_op_utils.h"
+
+static void	shuffle(t_ops inv_ops[11]);
 
 const char	*get_inv_op_of(const char *op)
 {
@@ -52,4 +54,29 @@ void	init_inv_ops(t_ops inv_ops[11])
 	inv_ops[8] = (t_ops){.inv_op = &inv_rrr, .op_name = "rrr"};
 	inv_ops[9] = (t_ops){.inv_op = &inv_pa, .op_name = "pa"};
 	inv_ops[10] = (t_ops){.inv_op = &inv_pb, .op_name = "pb"};
+	shuffle(inv_ops);
+}
+
+#include <time.h>
+#include <limits.h>
+
+static void	shuffle(t_ops inv_ops[11])
+{
+	int		i;
+	int		j;
+	t_ops	tmp;
+
+	srand(time(0));
+	i = 0;
+	while (i < 11)
+	{
+		j = i + rand() / (INT_MAX / (11 - i));
+		if (j != 11)
+		{
+			tmp = inv_ops[i];
+			inv_ops[i] = inv_ops[j];
+			inv_ops[j] = tmp;
+		}
+		i++;
+	}
 }
