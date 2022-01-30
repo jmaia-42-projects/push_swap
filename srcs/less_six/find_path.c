@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/29 14:47:39 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/30 12:27:36 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,20 @@ static int	get_parent_path_depth(t_path	*path)
 	return (i);
 }
 
-
 t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 {
 	t_path	*path;
 	t_list	*children;
 	t_list	*cur;
 	int			path_found;
+	t_list	*old_end;
 
 	path = 0;
 	path_found = 0;
 	cur = sorter->the_list->begin;
 	while (cur && (path_found == 0 || path_found == get_parent_path_depth((t_path *)cur->content)))
 	{
+		old_end = sorter->the_list->end;
 		children = append_stacks_children(sorter->the_list, cur);
 		if (children)
 		{
@@ -51,7 +52,14 @@ t_path	*find_path(t_sort *sorter, t_stacks *stacks)
 			if (path)
 			{
 				path_found = get_parent_path_depth((t_path *) cur->content);
-				return (path);
+				path = 0;
+				//return (path);
+			}
+			if (path_found)
+			{
+				ft_lstclear(&children, &free_path_wrapper);
+				old_end->next = 0;
+				sorter->the_list->end = old_end;
 			}
 		}
 		cur = cur->next;
@@ -78,8 +86,8 @@ t_path	*find_stacks_present(t_list *lst, t_stacks *stacks)
 				stacks->stack_b->lstpp->begin))
 		{
 			is_yes = (t_path *)cur->content;
-			//print_path((t_path *) cur->content);
-			//printf("----------------------\n");
+			print_path((t_path *) cur->content);
+			printf("----------------------\n");
 		}
 		cur = cur->next;
 	}
@@ -115,6 +123,8 @@ static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
 
 	if (p_path->op && !ft_strcmp(op.op_name, get_inv_op_of(p_path->op)))
 		return (0);
+	if (((!ft_strcmp(op.op_name, "sb") || !ft_strcmp(op.op_name, "ss") || !ft_strcmp(op.op_name, "rb") || !ft_strcmp(op.op_name, "rr") || !ft_strcmp(op.op_name, "rrb") || !ft_strcmp(op.op_name, "rrr")) && (!p_path->stacks->stack_b->lstpp->begin || !p_path->stacks->stack_b->lstpp->begin->next)) || (!ft_strcmp(op.op_name, "pb") && !p_path->stacks->stack_b->lstpp->begin))
+		return (0);
 	child = get_path(0, p_path, op.op_name);
 	child->stacks = clone_stacks(p_path->stacks);
 	if (!child->stacks)
@@ -124,11 +134,11 @@ static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
 	}
 	(void) is_stacks_present;
 	op.inv_op(child->stacks);
-	if (is_stacks_present(the_list, child->stacks))
-	{
-		free_path(&child);
-		return (0);
-	}
+//	if (is_stacks_present(the_list, child->stacks))
+//	{
+//		free_path(&child);
+//		return (0);
+//	}
 	child_lst = ft_lstnew(child);
 	ft_lstppadd_back(the_list, child_lst);
 	return (child_lst);
