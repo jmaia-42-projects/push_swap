@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:23:56 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/31 22:02:47 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 22:22:56 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define RULES_H
 
 # include "stacks.h"
+# include "op.h"
 
-typedef const char *(*t_rule)(t_stacks *);
+typedef t_op (*t_rule)(t_stacks *);
 
 t_rule	*get_rules(void);
 

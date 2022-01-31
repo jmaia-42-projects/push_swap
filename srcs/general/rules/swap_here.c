@@ -6,13 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:52 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/31 17:00:03 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 23:01:24 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rules.h"
 
-static const char	*how_do_i_rule_these_stacks(t_stacks *stacks);
+static t_op	how_do_i_rule_these_stacks(t_stacks *stacks);
 static int	will_i_rule_this_stack(t_stack *stack);
 static int	are_following(int a, int b, int max);
 
@@ -21,21 +21,30 @@ t_rule	get_rule_swap_here(void)
 	return (&how_do_i_rule_these_stacks);
 }
 
-static const char	*how_do_i_rule_these_stacks(t_stacks *stacks)
-{
-	int	rule_stack_a;
-	int	rule_stack_b;
+static t_op	how_do_i_rule_these_stacks(t_stacks *stacks) {
+	int		rule_stack_a;
+	int		rule_stack_b;
+	t_op	op;
 
+	op.op = 0;
 	rule_stack_a = will_i_rule_this_stack(stacks->stack_a);
 	rule_stack_b = will_i_rule_this_stack(stacks->stack_b);
 	if (rule_stack_a && rule_stack_b)
-		return ("ss\n");
+	{
+		op.op_name = "ss\n";
+		op.op = &ss;
+	}
 	else if (rule_stack_a)
-		return ("sa\n");
+	{
+		op.op_name = "sa\n";
+		op.op = &sa;
+	}
 	else if (rule_stack_b)
-		return ("sb\n");
-	else
-		return (0);
+	{
+		op.op_name = "sb\n";
+		op.op = &sb;
+	}
+	return (op);
 }
 
 static int	will_i_rule_this_stack(t_stack *stack)
