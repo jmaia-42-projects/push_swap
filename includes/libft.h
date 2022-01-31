@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:29:35 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 22:25:07 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ unsigned char	*ft_itoa_base(long long n, char *base);
 unsigned char	*ft_uitoa_base(unsigned long long nbr, char *base);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
-void			ft_put_bytes_fd(char *s, unsigned int len, int fd);
+void			ft_putchar_fd(const char c, int fd);
+void			ft_putstr_fd(const char *s, int fd);
+void			ft_put_bytes_fd(const char *s, unsigned int len, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
