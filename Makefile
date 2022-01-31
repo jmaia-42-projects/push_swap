@@ -8,13 +8,15 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				general/sort_general.c \
 				general/rules/rotate_in_the_void.c \
 				general/rules/swap_here.c \
-				general/rules/get_rules.c
+				general/rules/get_rules.c \
+				general/is_sorted.c \
+				general/intcmp.c
 
 OBJS		:=	${SRCS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 -O0 #-fsanitize=address
 
 INCLUDE		=	-I includes/ -I includes/general
 

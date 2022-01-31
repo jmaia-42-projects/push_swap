@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.h                                     :+:      :+:    :+:   */
+/*   intcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:00:39 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/31 22:31:00 by jmaia            ###   ########.fr       */
+/*   Created: 2022/01/31 22:34:35 by jmaia             #+#    #+#             */
+/*   Updated: 2022/01/31 22:35:17 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORT_GENERAL_H
-# define SORT_GENERAL_H
+#include "intcmp.h"
 
-# include "stacks.h"
-# include "rules.h"
-# include "op.h"
-# include "is_sorted.h"
+int	intcmp(void *v1, void *v2)
+{
+	int	*i1;
+	int	*i2;
 
-void	print_sort_general(t_stacks *stacks);
-
-#endif
+	i1 = v1;
+	i2 = v2;
+	return (*i1 - *i2);
+}
