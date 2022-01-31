@@ -51,7 +51,7 @@ static int	will_i_rule_this_stack(t_stack *stack)
 {
 	if (!stack->lstpp->begin || !stack->lstpp->begin->next)
 		return (0);
-	return (!are_following(*(int *)stack->lstpp->begin, *(int *)stack->lstpp->begin->next, 0));
+	return (!are_following(*(int *)stack->lstpp->begin->content, *(int *)stack->lstpp->begin->next->content, 0));
 }
 
 static int	are_following(int a, int b, int max)
