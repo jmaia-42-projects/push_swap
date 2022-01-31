@@ -6,7 +6,7 @@ def read_file(path):
     return (data)
 
 sequences = {}
-path="/home/alpha/42/push_swap/7_elems_combined.txt"
+path="../7_elems_combined.txt"
 resolvings = read_file(path).split("-----------\n");
 for resolving in resolvings:
     resolving = resolving.split("\n")
