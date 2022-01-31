@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 21:54:14 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/31 22:02:19 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 22:47:54 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_rule	*get_rules()
 	t_rule	*rules;
 
 	rules = malloc(sizeof(*rules) * 3);
-	if (rules)
+	if (!rules)
 		return (0);
 	rules[0] = get_rule_swap_here();
 	rules[1] = get_rule_default_rotate_in_the_void();
