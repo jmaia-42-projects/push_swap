@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 15:35:12 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:37:06 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 22:20:57 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ const char	*get_inv_op_of(const char *op)
 	return (0);
 }
 
-void	init_inv_ops(t_ops inv_ops[11])
+void	init_inv_ops(t_op inv_ops[11])
 {
-	inv_ops[0] = (t_ops){.inv_op = &inv_sa, .op_name = "sa"};
-	inv_ops[1] = (t_ops){.inv_op = &inv_sb, .op_name = "sb"};
-	inv_ops[2] = (t_ops){.inv_op = &inv_ss, .op_name = "ss"};
-	inv_ops[3] = (t_ops){.inv_op = &inv_pa, .op_name = "pa"};
-	inv_ops[4] = (t_ops){.inv_op = &inv_pb, .op_name = "pb"};
-	inv_ops[5] = (t_ops){.inv_op = &inv_ra, .op_name = "ra"};
-	inv_ops[6] = (t_ops){.inv_op = &inv_rb, .op_name = "rb"};
-	inv_ops[7] = (t_ops){.inv_op = &inv_rr, .op_name = "rr"};
-	inv_ops[8] = (t_ops){.inv_op = &inv_rra, .op_name = "rra"};
-	inv_ops[9] = (t_ops){.inv_op = &inv_rrb, .op_name = "rrb"};
-	inv_ops[10] = (t_ops){.inv_op = &inv_rrr, .op_name = "rrr"};
+	inv_ops[0] = (t_op){.op = &inv_sa, .op_name = "sa"};
+	inv_ops[1] = (t_op){.op = &inv_sb, .op_name = "sb"};
+	inv_ops[2] = (t_op){.op = &inv_ss, .op_name = "ss"};
+	inv_ops[3] = (t_op){.op = &inv_pa, .op_name = "pa"};
+	inv_ops[4] = (t_op){.op = &inv_pb, .op_name = "pb"};
+	inv_ops[5] = (t_op){.op = &inv_ra, .op_name = "ra"};
+	inv_ops[6] = (t_op){.op = &inv_rb, .op_name = "rb"};
+	inv_ops[7] = (t_op){.op = &inv_rr, .op_name = "rr"};
+	inv_ops[8] = (t_op){.op = &inv_rra, .op_name = "rra"};
+	inv_ops[9] = (t_op){.op = &inv_rrb, .op_name = "rrb"};
+	inv_ops[10] = (t_op){.op = &inv_rrr, .op_name = "rrr"};
 }

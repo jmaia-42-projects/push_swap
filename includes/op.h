@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops.h                                              :+:      :+:    :+:   */
+/*   op.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:59:52 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:47:41 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 22:18:53 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPS_H
-# define OPS_H
+#ifndef OP_H
+# define OP_H
 
 # include "stacks.h"
 
-typedef struct s_ops
+typedef struct s_op
 {
-	void		(*inv_op)(t_stacks *);
+	void		(*op)(t_stacks *);
 	const char	*op_name;
-}	t_ops;
+}	t_op;
 
 #endif

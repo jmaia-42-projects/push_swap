@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 18:21:32 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 16:54:52 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/31 22:20:24 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_list		*append_stacks_children(t_listpp *the_list, t_list *cur);
 static t_list		*append_child_if_absent(t_listpp *the_list, t_path *cur,
-						t_ops op);
+						t_op op);
 static int			is_stacks_present(t_listpp *the_list, t_stacks *stacks);
 
 t_path	*find_path(t_sort *sorter, t_stacks *stacks)
@@ -62,7 +62,7 @@ static t_list	*append_stacks_children(t_listpp *the_list, t_list *cur)
 {
 	t_list	*children;
 	t_list	*child;
-	t_ops	inv_ops[11];
+	t_op	inv_ops[11];
 	int		i;
 
 	init_inv_ops(inv_ops);
@@ -80,7 +80,7 @@ static t_list	*append_stacks_children(t_listpp *the_list, t_list *cur)
 }
 
 static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
-		t_ops op)
+		t_op op)
 {
 	t_path	*child;
 	t_list	*child_lst;
@@ -94,7 +94,7 @@ static t_list	*append_child_if_absent(t_listpp *the_list, t_path *p_path,
 		free_path(&child);
 		return (0);
 	}
-	op.inv_op(child->stacks);
+	op.op(child->stacks);
 	if (is_stacks_present(the_list, child->stacks))
 	{
 		free_path(&child);
