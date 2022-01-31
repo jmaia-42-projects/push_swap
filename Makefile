@@ -5,7 +5,9 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/inv_ops/inv_push.c stacks/inv_ops/inv_rotate.c \
 				stacks/inv_ops/inv_rrotate.c stacks/clone_stacks.c \
 				stacks/print_stacks.c stacks/inv_ops/inv_op_utils.c \
-				general/sort_general.c
+				general/sort_general.c \
+				general/rules/rotate_in_the_void.c \
+				general/rules/swap_here.c
 
 OBJS		:=	${SRCS:.c=.o}
 
@@ -13,7 +15,7 @@ NAME		=	push_swap
 
 CFLAGS		=	-Wall -Werror -Wextra -g3 -O3 #-fsanitize=address
 
-INCLUDE		=	includes/
+INCLUDE		=	-I includes/ -I includes/general
 
 LIBS		=	libs/libft/libft.a
 
@@ -25,7 +27,7 @@ build/%.o	:	srcs/%.c
 	@if [ ! -d $(dir $@) ]; then\
 		mkdir -p $(dir $@);\
 	fi
-	cc ${CFLAGS} -I ${INCLUDE} -c $< -o $@
+	cc ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 $(NAME)	:	$(addprefix build/,${OBJS})	${LIBS}
 	cc ${CFLAGS} -o ${NAME} $(addprefix build/,${OBJS}) ${LIBS}
