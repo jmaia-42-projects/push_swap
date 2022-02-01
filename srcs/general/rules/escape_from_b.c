@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules.h                                            :+:      :+:    :+:   */
+/*   escape_from_b.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 15:23:56 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/01 11:09:15 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/01 11:09:24 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/01 11:11:48 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RULES_H
-# define RULES_H
+#include "rules.h"
 
-# include "stacks.h"
-# include "op.h"
+static t_op	how_do_i_rule_these_stacks(t_stacks *stacks);
 
-typedef t_op (*t_rule)(t_stacks *);
+t_rule	get_rule_default_escape_from_b(void)
+{
+	return (&how_do_i_rule_these_stacks);
+}
 
-t_rule	*get_rules(void);
+static t_op	how_do_i_rule_these_stacks(t_stacks *stacks)
+{
+	t_op	op;
 
-t_rule	get_rule_bubble_merge(void);
-t_rule	get_rule_hide_and_seek_merge(void);
-t_rule	get_rule_swap_here(void);
-t_rule	get_rule_default_escape_from_b(void);
-t_rule	get_rule_default_rotate_in_the_void(void);
-
-#endif
+	(void) stacks;
+	op.op = &pa;
+	op.op_name = "pa\n";
+	return (op);
+}
