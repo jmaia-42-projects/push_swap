@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   escape_from_b.c                                    :+:      :+:    :+:   */
+/*   rotate_info.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 11:09:24 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/01 16:59:45 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/01 16:45:44 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/01 16:47:51 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rules.h"
+#ifndef ROTATE_INFO_H
+# define ROTATE_INFO_H
 
-static t_op	how_do_i_rule_these_stacks(t_stacks *stacks);
-
-t_rule	get_rule_default_escape_from_b(void)
+typedef struct s_rotate_info
 {
-	return (&how_do_i_rule_these_stacks);
-}
+	
+}	t_rotate_info;
 
-static t_op	how_do_i_rule_these_stacks(t_stacks *stacks)
-{
-	t_op	op;
-
-	(void) stacks;
-	op.op = 0;
-	if (!stacks->stack_b->lstpp->begin)
-		return (op);
-	op.op = &pa;
-	op.op_name = "pa\n";
-	return (op);
-}
+#endif
