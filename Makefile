@@ -9,6 +9,8 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				general/rules/rotate_in_the_void.c \
 				general/rules/swap_here.c \
 				general/rules/get_rules.c \
+				general/rules/bubble_merge.c \
+				general/rules/hide_and_seek_merge.c \
 				general/is_sorted.c \
 				general/intcmp.c \
 				stacks/get_max.c
