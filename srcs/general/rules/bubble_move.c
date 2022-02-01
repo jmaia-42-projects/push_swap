@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:50:46 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/01 17:54:27 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/02 00:22:26 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,13 @@ static t_op	how_do_i_rule_these_stacks(t_stacks *stacks)
 
 	(void) node_search;
 	(void) where_do_i_want_to_go;
-	dist0 = get_relative_distance_to_right_place(stacks->stack_a, 0);
-	dist1 = get_relative_distance_to_right_place(stacks->stack_a, 1);
-	who_moves = ft_abs(dist0) > ft_abs(dist1);
 	op.op = 0;
-	if ((who_moves == 0 && dist0 > 0) || (who_moves == 1 && dist1 < 0))
+	if (!stacks->stack_a->lstpp->begin || !stacks->stack_a->lstpp->begin->next)
+		return (op);
+	dist0 = get_relative_distance_to_right_place(stacks->stack_a, *(int *)stacks->stack_a->lstpp->begin->content);
+	dist1 = get_relative_distance_to_right_place(stacks->stack_a, *(int *)stacks->stack_a->lstpp->begin->next->content);
+	who_moves = (ft_abs(dist0) > ft_abs(dist1)) + (ft_abs(dist0) == ft_abs(dist1)) * 2;
+	if ((who_moves == 0 && dist0 > 0) || (who_moves == 1 && dist1 < 0) || (who_moves == 2 && (dist0 > 0 || dist1 < 0)))
 	{
 		op.op = &sa;
 		op.op_name = "sa\n";
@@ -76,7 +78,7 @@ static int	get_relative_distance_to_right_place(t_stack *stack, int elem)
 		if (cur_elem == elem)
 			i_start = i;
 		else if (cur_elem == elem + 1 || (elem == stack_size && cur_elem == 1))
-			i_end = i;
+			i_end = (i != 0) * (i - 1) + (i == 0) * (stack_size - 1);
 		i++;
 		cur = cur->next;
 	}

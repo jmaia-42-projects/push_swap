@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:52 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/01 08:32:48 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/01 23:40:45 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,5 @@ static int	are_neighbours(int a, int b, int max)
 
 static int	are_sorted(int a, int b, int max)
 {
-	return (a < b || (a == max && b == 1));
+	return ((a < b && (b != max || a != 1)) || (a == max && b == 1));
 }

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/01 08:34:20 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/01 21:33:55 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	print_sort_general(t_stacks *stacks)
 	free(rules);
 }
 
+#include <stdio.h>
+
+void	print_stacks(t_stacks *stacks);
+
 static void	apply_rule(t_rule *rules, t_stacks *stacks)
 {
 	int		i;
@@ -40,5 +44,7 @@ static void	apply_rule(t_rule *rules, t_stacks *stacks)
 	{
 		op.op(stacks);
 		ft_putstr_fd(op.op_name, 1);
+		fprintf(stderr, "Rule n°%d\n", i);
+		print_stacks(stacks);
 	}
 }
