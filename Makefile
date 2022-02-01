@@ -13,6 +13,7 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				general/rules/hide_and_seek_merge.c \
 				general/rules/escape_from_b.c \
 				general/rules/push_to_sort.c \
+				general/rules/bubble_move.c \
 				general/is_sorted.c \
 				general/intcmp.c \
 				stacks/get_max.c
