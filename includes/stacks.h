@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 10:43:41 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 13:13:07 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/01 08:12:43 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_stacks	*clone_stacks(t_stacks *stacks);
 int			push_elem(t_stack *stack, int elem);
 void		free_stacks(t_stacks *stacks, int do_free_content);
 void		free_stack(t_stack *stack, int do_free_content);
+int			get_max(t_stacks *stacks);
 
 void		ss(t_stacks *stacks);
 void		sa(t_stacks *stacks);

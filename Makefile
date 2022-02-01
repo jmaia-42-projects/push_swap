@@ -10,7 +10,8 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				general/rules/swap_here.c \
 				general/rules/get_rules.c \
 				general/is_sorted.c \
-				general/intcmp.c
+				general/intcmp.c \
+				stacks/get_max.c
 
 OBJS		:=	${SRCS:.c=.o}
 
