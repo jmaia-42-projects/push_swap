@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/01 21:33:55 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/02 17:35:38 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	apply_rule(t_rule *rules, t_stacks *stacks)
 	{
 		op.op(stacks);
 		ft_putstr_fd(op.op_name, 1);
-		fprintf(stderr, "Rule n°%d\n", i);
+		fprintf(stderr, "Applying the rule %d gived these stacks :\n", i);
 		print_stacks(stacks);
 	}
 }

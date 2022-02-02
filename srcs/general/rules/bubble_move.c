@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:50:46 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/02 00:22:26 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/02 17:50:40 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,23 @@ static t_op	how_do_i_rule_these_stacks(t_stacks *stacks)
 		return (op);
 	dist0 = get_relative_distance_to_right_place(stacks->stack_a, *(int *)stacks->stack_a->lstpp->begin->content);
 	dist1 = get_relative_distance_to_right_place(stacks->stack_a, *(int *)stacks->stack_a->lstpp->begin->next->content);
-	who_moves = (ft_abs(dist0) > ft_abs(dist1)) + (ft_abs(dist0) == ft_abs(dist1)) * 2;
+	//who_moves => 0 => le 1er, 1 => le 2e, -1 => Les 2
+	if (ft_abs(dist0) == 0 && ft_abs(dist1) == 0)
+		return (op);
+	else if (ft_abs(dist0) == 0 && dist1 > 0)
+		who_moves = 1;
+	else if (ft_abs(dist1) == 0 && dist0 < 0)
+		who_moves = 0;
+	else if (ft_abs(dist0) < ft_abs(dist1))
+		who_moves = 0;
+	else if (ft_abs(dist1) < ft_abs(dist0))
+		who_moves = 1;
+	else if (dist0 > 0)
+		who_moves = 0;
+	else if (dist1 < 0)
+		who_moves = 1;
+	else
+		who_moves = -1;
 	if ((who_moves == 0 && dist0 > 0) || (who_moves == 1 && dist1 < 0) || (who_moves == 2 && (dist0 > 0 || dist1 < 0)))
 	{
 		op.op = &sa;
