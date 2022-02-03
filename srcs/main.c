@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 17:01:36 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/03 15:52:44 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 static t_stack	*parse_stack_a(int ac, char **av);
 static int		check_args(int ac, char **av);
-static int		print_error(void);
+static void		*print_error(void);
 
 int	main(int ac, char **av)
 {
@@ -31,15 +31,19 @@ int	main(int ac, char **av)
 		return (0);
 	stacks = get_stacks(0, 0);
 	if (!stacks)
-		return (print_error());
+	{
+		print_error();
+		return (1);
+	}
 	stacks->stack_a = parse_stack_a(ac, av);
 	stacks->stack_b = get_stack();
 	if (!stacks->stack_a || !stacks->stack_b)
 	{
 		free_stacks(stacks, 1);
-		return (print_error());
+		print_error();
+		return (1);
 	}
-	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 6)
+	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 1)
 		print_sort_less_six(stacks);
 	else
 		print_sort_general(stacks);
@@ -55,14 +59,14 @@ static t_stack	*parse_stack_a(int ac, char **av)
 
 	err = !check_args(ac, av);
 	if (err)
-		exit(print_error());
+		return (print_error());
 	i = ac - 1;
 	stack = get_stack();
 	if (!stack)
 		return (0);
 	while (i >= 1 && !err)
 	{
-		err = !push_elem(stack, atoi(av[i]));
+		err = !push_elem(stack, ft_atoi(av[i]));
 		if (err)
 			ft_lstppclear(&stack->lstpp, &free);
 		i--;
@@ -94,8 +98,8 @@ static int	check_args(int ac, char **av)
 	return (1);
 }
 
-static int	print_error(void)
+static void	*print_error(void)
 {
 	write(2, "Error\n", 6);
-	return (1);
+	return (0);
 }
