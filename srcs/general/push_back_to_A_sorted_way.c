@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:08:50 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/03 22:36:17 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/03 23:00:19 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,25 @@ int	push_back_to_A_sorted_way(t_stacks *stacks)
 
 static int	push_next_elem_to_A(t_stacks *stacks)
 {
-	
+	int	elems[2];	
+
+	get_closest_elems(stacks, elems);
+	bring_to_the_top(stacks, elems);
+}
+
+static void	bring_to_the_top(t_stacks *stacks, int elems[2])
+{
+	int	dist0;
+	int	dist1;
+
+	dist0 = get_relative_distance_of(elems[0]);
+	dist1 = get_relative_distance_of(elems[1]);
+
 }
 
 // elems[0] => elem sur la stack A
 // elems[1] => elem sur la stack B
-static void	get_closest_elem(t_stacks *stacks, int elems[2])
+static void	get_closest_elems(t_stacks *stacks, int elems[2])
 {
 	t_list	*cur;
 	int		upper_bound;
@@ -42,7 +55,8 @@ static void	get_closest_elem(t_stacks *stacks, int elems[2])
 	while (cur)
 	{
 		upper_bound = get_upper_bound(stacks, *(int *)cur->content);
-		cur_cost = get_cost(stacks->stack_b, *(int *)cur->content) + get_cost(stacks->stack_a, upper_bound);
+		// Pas possible, faut check les 2 directions voir si ça va au même endoit et tout
+		//cur_cost = get_cost(stacks->stack_b, *(int *)cur->content) + get_cost(stacks->stack_a, upper_bound);
 		if (cur_cost < min_cost)
 		{
 			min_cost = cur_cost;
@@ -79,6 +93,17 @@ static void	get_closest_elem(t_stacks *stacks, int elems[2])
 //	}
 //}
 
+static int	get_cost(t_stacks *stacks, int elems[2])
+{
+	int	dist0[2];
+	int	dist1[2];
+
+	// Check ton cahier, il faut avoir les distances dans les 4 sens
+	// Après, on voit ce qui rend le mieux
+	dist0 = get_double_distance_of(stacks->stack_a, elems[0]);
+	dist1 = get_double_distance_of(stacks->stack_b, elems[1]);
+}
+
 static int	*get_upper_bound(t_stacks *stacks, int elem)
 {
 	t_list	*cur_a;
@@ -95,7 +120,7 @@ static int	*get_upper_bound(t_stacks *stacks, int elem)
 	return (upper_bound);
 }
 
-static int	get_cost(t_stack *stack, int elem)
+static void	get_double_distance_of(t_stack *stack, int elem, int distances[2])
 {
 	t_list	*cur;
 	int		i;
@@ -108,10 +133,28 @@ static int	get_cost(t_stack *stack, int elem)
 		i++;
 		cur = cur->next;
 	}
-	relative_dist = get_relative_distance(i, ft_lstsize(stack->lstpp->begin));
+	distance[0] = i;
+	distance[1] = to_relative_distance(i, ft_lstsize(stack->lstpp->begin));
 }
 
-static int	get_relative_distance(int dist, int lst_size)
+static int	get_relative_distance_of(t_stack *stack, int elem)
+{
+	t_list	*cur;
+	int		i;
+	int		relative_dist;
+
+	i = 0;
+	cur = stack->lstpp->begin;
+	while (cur && *(int *)cur->content != elem)
+	{
+		i++;
+		cur = cur->next;
+	}
+	relative_dist = to_relative_distance(i, ft_lstsize(stack->lstpp->begin));
+	return (relative_dist);
+}
+
+static int	to_relative_distance(int dist, int lst_size)
 {
 	int	reverse_dist;
 	int	sign;
