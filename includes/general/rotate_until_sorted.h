@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.h                                     :+:      :+:    :+:   */
+/*   rotate_until_sorted.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:00:39 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/03 17:04:18 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/03 17:04:28 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/03 17:08:28 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORT_GENERAL_H
-# define SORT_GENERAL_H
-
-# include <unistd.h>
+#ifndef ROTATE_UNTIL_SORTED_H
+# define ROTATE_UNTIL_SORTED_H
 
 # include "stacks.h"
-# include "print_stacks.h"
-# include "push_below_median.h"
-# include "push_everything_but_2_lasts.h"
-# include "push_back_to_A_sorted_way.h"
-# include "rotate_until_sorted.h"
 
-void	print_sort_general(t_stacks *stacks);
+void	rotate_until_sorted(t_stacks *stacks);
 
 #endif
