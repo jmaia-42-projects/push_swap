@@ -27,8 +27,17 @@ SRCS_CHECK	=	$(SRCS_ONLY_CHECK) \
 				stacks/get_stack.c \
 				stacks/free_stacks.c \
 				stacks/push_elem.c \
+				stacks/inv_ops/inv_op_utils.c \
+				stacks/push.c \
+				stacks/rotate.c \
+				stacks/rrotate.c \
+				stacks/swap.c \
+				stacks/inv_ops/inv_rotate.c \
+				stacks/inv_ops/inv_swap.c \
+				stacks/inv_ops/inv_push.c \
+				stacks/inv_ops/inv_rrotate.c \
 				libs/get_next_line/get_next_line.c \
-				libs/get_next_line/get_next_line_utils.c
+				libs/get_next_line/get_next_line_utils.c \
 
 OBJS		:=	${SRCS:.c=.o}
 
@@ -40,12 +49,12 @@ NAME_CHECK	=	checker
 
 CFLAGS		=	-Wall -Werror -Wextra -g3 -D BUFFER_SIZE=512 #-O0 -fsanitize=address
 
-INCLUDE		=	-I includes/ -I includes/general -I libs/get_next_line
+INCLUDE		=	-I includes/ -I includes/general -I libs/get_next_line -I libs/libdynamic_buffer/includes
 
 OBJS_GNL	=	get_next_line.c get_next_line_utils.c
 
 LIBS		=	libs/libft/libft.a
-LIBS_CHECK	=	libs/libdynamic_buffer/libdynamic_buffer.a
+LIBS_CHECK	=	libs/libdynamic_buffer/libdynamic_buffer.a libs/libft/libft.a
 
 BUILD		=	build/
 

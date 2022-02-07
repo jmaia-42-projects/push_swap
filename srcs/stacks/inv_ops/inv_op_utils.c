@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 15:35:12 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 14:40:06 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 17:58:33 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,38 @@ void	init_inv_ops(t_ops inv_ops[11])
 	inv_ops[9] = (t_ops){.op = &inv_rrb, .op_name = "rrb"};
 	inv_ops[10] = (t_ops){.op = &inv_rrr, .op_name = "rrr"};
 }
+
+t_ops	get_op(const char *raw_op)
+{
+	t_ops	op;
+	t_ops	ops[11];
+	int		i;
+
+	get_ops(ops);
+	i = 0;
+	op.op = 0;
+	op.op_name = 0;
+	while (i < 11)
+	{
+		if (!ft_strcmp(raw_op, ops[i].op_name))
+			return (ops[i]);
+		i++;
+	}
+	return (op);
+}
+
+void	get_ops(t_ops ops[11])
+{
+	ops[0] = (t_ops){.op = &sa, .op_name = "sa"};
+	ops[1] = (t_ops){.op = &sa, .op_name = "sb"};
+	ops[2] = (t_ops){.op = &sa, .op_name = "ss"};
+	ops[3] = (t_ops){.op = &sa, .op_name = "pa"};
+	ops[4] = (t_ops){.op = &sa, .op_name = "pb"};
+	ops[5] = (t_ops){.op = &sa, .op_name = "ra"};
+	ops[6] = (t_ops){.op = &sa, .op_name = "rb"};
+	ops[7] = (t_ops){.op = &sa, .op_name = "rr"};
+	ops[8] = (t_ops){.op = &sa, .op_name = "rra"};
+	ops[9] = (t_ops){.op = &sa, .op_name = "rrb"};
+	ops[10] = (t_ops){.op = &sa, .op_name = "rrr"};
+}
+

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 23:23:27 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/16 18:31:59 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 21:01:11 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	free_buffer(t_dynamic_buffer **buffer, void (*del)(void *))
 	{
 		i = 0;
 		while (i < (*buffer)->i)
-			del(get_elem_ptr(*buffer, i++));
+			del(*(void **)get_elem_ptr(*buffer, i++));
 	}
 	free((*buffer)->buffer);
-	free(*buffer);
+//	free(*buffer);
 	*buffer = 0;
 	return (1);
 }
@@ -55,7 +55,7 @@ int	append(t_dynamic_buffer *buffer, void *elem)
 	return (0);
 }
 
-static void	*get_elem_ptr(t_dynamic_buffer *buffer, unsigned long i)
+void	*get_elem_ptr(t_dynamic_buffer *buffer, unsigned long i)
 {
 	char	*buffer_bytes;
 	void	*ptr;
