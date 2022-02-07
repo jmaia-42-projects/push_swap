@@ -13,9 +13,15 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/get_double_distance_of.c \
 				general/bring_to_the_top.c
 
+SRCS_CHECK	=	
+
 OBJS		:=	${SRCS:.c=.o}
 
+OBJS_CHECK	:=	$(SRCS_CHECK:.c=.o)
+
 NAME		=	push_swap
+
+NAME_CHECK	=	checker
 
 CFLAGS		=	-Wall -Werror -Wextra #-g3 -O0 -fsanitize=address
 
@@ -36,10 +42,15 @@ build/%.o	:	srcs/%.c
 $(NAME)	:	$(addprefix build/,${OBJS})	${LIBS}
 	cc ${CFLAGS} -o ${NAME} $(addprefix build/,${OBJS}) ${LIBS}
 
+$(NAME_CHECK)	:	$(OBJS_CHECK)
+	cc $(CFLAGS) -o $(NAME_CHECK) $(addprefix build/,$(OBJS_CHECK)) $(LIBS)
+
 libs/libft/libft.a	:
 	make -C libs/libft
 
 libs	:	${LIBS}
+
+bonus	:	$(NAME_CHECK)
 
 clean	:	
 	rm -Rf build/
@@ -58,4 +69,4 @@ relibs	:	fcleanlibs	libs
 
 reall	:	relibs re
 
-.PHONY	:	all clean fclean re reall relibs fcleanlibs fcleanall libs
+.PHONY	:	all clean fclean re reall relibs fcleanlibs fcleanall libs bonus
