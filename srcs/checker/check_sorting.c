@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:46:11 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 21:04:40 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 21:24:12 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	check_sorting(t_stacks *stacks)
 	read_ops(buf);
 	err = !apply_ops(stacks, buf);
 	if (err)
-		return (1);
+		return (0);
 	is_sorted = is_lst_sorted(stacks->stack_a->lstpp->begin);
-	if (is_sorted)
+	if (is_sorted && !stacks->stack_b->lstpp->begin)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
 	free_buffer(&buf, &free);
-	return (is_sorted && !stacks->stack_b->lstpp->begin);
+	return (1);
 }
 
 static void	read_ops(t_dynamic_buffer *buf)
