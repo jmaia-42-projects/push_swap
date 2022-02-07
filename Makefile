@@ -15,7 +15,17 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				parse_stack_a.c \
 				print_error.c
 
-SRCS_CHECK	=	$(addprefix checker/, main.c)
+SRCS_ONLY_CHECK_	=	main.c
+
+SRCS_ONLY_CHECK	=	$(addprefix checker/, $(SRCS_ONLY_CHECK_))
+
+SRCS_CHECK	=	$(SRCS_ONLY_CHECK) \
+				parse_stack_a.c \
+				print_error.c \
+				stacks/get_stacks.c \
+				stacks/get_stack.c \
+				stacks/free_stacks.c \
+				stacks/push_elem.c
 
 OBJS		:=	${SRCS:.c=.o}
 
