@@ -13,7 +13,7 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/get_double_distance_of.c \
 				general/bring_to_the_top.c
 
-SRCS_CHECK	=	
+SRCS_CHECK	=	$(addprefix checker/, main.c)
 
 OBJS		:=	${SRCS:.c=.o}
 
@@ -42,7 +42,7 @@ build/%.o	:	srcs/%.c
 $(NAME)	:	$(addprefix build/,${OBJS})	${LIBS}
 	cc ${CFLAGS} -o ${NAME} $(addprefix build/,${OBJS}) ${LIBS}
 
-$(NAME_CHECK)	:	$(OBJS_CHECK)
+$(NAME_CHECK)	:	$(addprefix build/, $(OBJS_CHECK))
 	cc $(CFLAGS) -o $(NAME_CHECK) $(addprefix build/,$(OBJS_CHECK)) $(LIBS)
 
 libs/libft/libft.a	:
