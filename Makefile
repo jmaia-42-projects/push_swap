@@ -11,7 +11,9 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				general/push_back_to_A_sorted_way.c \
 				general/rotate_until_sorted.c \
 				stacks/get_double_distance_of.c \
-				general/bring_to_the_top.c
+				general/bring_to_the_top.c \
+				parse_stack_a.c \
+				print_error.c
 
 SRCS_CHECK	=	$(addprefix checker/, main.c)
 

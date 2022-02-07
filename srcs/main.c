@@ -6,22 +6,16 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/03 15:52:44 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 16:20:08 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-
 #include "libft.h"
 
-#include "stacks.h"
-#include "sort.h"
 #include "sort_general.h"
-
-static t_stack	*parse_stack_a(int ac, char **av);
-static int		check_args(int ac, char **av);
-static void		*print_error(void);
+#include "print_error.h"
+#include "parse_stack_a.h"
+#include "sort.h"
 
 int	main(int ac, char **av)
 {
@@ -48,58 +42,5 @@ int	main(int ac, char **av)
 	else
 		print_sort_general(stacks);
 	free_stacks(stacks, 1);
-	return (0);
-}
-
-static t_stack	*parse_stack_a(int ac, char **av)
-{
-	int		i;
-	int		err;
-	t_stack	*stack;
-
-	err = !check_args(ac, av);
-	if (err)
-		return (print_error());
-	i = ac - 1;
-	stack = get_stack();
-	if (!stack)
-		return (0);
-	while (i >= 1 && !err)
-	{
-		err = !push_elem(stack, ft_atoi(av[i]));
-		if (err)
-			ft_lstppclear(&stack->lstpp, &free);
-		i--;
-	}
-	if (err)
-		print_error();
-	return (stack);
-}
-
-static int	check_args(int ac, char **av)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < ac)
-	{
-		if (!ft_isint(av[i]))
-			return (0);
-		j = 1;
-		while (j < i)
-		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-static void	*print_error(void)
-{
-	write(2, "Error\n", 6);
 	return (0);
 }
