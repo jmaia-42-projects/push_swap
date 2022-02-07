@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.c                                     :+:      :+:    :+:   */
+/*   bring_to_the_top.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 14:16:12 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/07 14:18:27 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/07 14:37:16 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort_general.h"
+#ifndef BRING_TO_THE_TOP_H
+# define BRING_TO_THE_TOP_H
 
-#include <stdio.h>
+# include <unistd.h>
 
-void	print_sort_general(t_stacks *stacks)
-{
-	push_below_median(stacks);
-	push_everything_but_2_lasts(stacks);
-	push_back_to_a_sorted_way(stacks);
-	rotate_until_sorted(stacks);
-}
+# include "stacks.h"
+# include "get_double_distance_of.h"
+# include "ops.h"
+
+void	bring_to_the_top(t_stacks *stacks, int elems[2]);
+
+#endif

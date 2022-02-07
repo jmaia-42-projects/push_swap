@@ -6,7 +6,7 @@
 #    By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 12:50:34 by jmaia             #+#    #+#              #
-#    Updated: 2022/01/21 15:22:09 by jmaia            ###   ########.fr        #
+#    Updated: 2022/02/07 14:21:34 by jmaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstcpy.c \
 				ft_lstsort.c ft_lstequals.c ft_lstset_next.c ft_lstppclear.c \
 				ft_lstppsort.c ft_lstppnew.c ft_lstppcpy.c ft_lstbreaklink.c \
-				ft_lstppadd_back.c ft_lstppadd_front.c
+				ft_lstppadd_back.c ft_lstppadd_front.c ft_abs.c ft_min.c \
+				ft_max.c
 
 OBJS		=	${SRCS:.c=.o}
 

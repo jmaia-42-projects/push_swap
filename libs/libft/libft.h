@@ -6,13 +6,12 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:50:43 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:29:35 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 14:20:56 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
-
+# define LIBFT_H 
 # include <stddef.h>
 # include <stdlib.h>
 
@@ -98,4 +97,8 @@ t_listpp		*ft_lstppsort(t_list *lst, int (*cmp)(void *, void *));
 void			ft_lstppadd_front(t_listpp *lstpp, t_list *new);
 void			ft_lstppadd_back(t_listpp *lstpp, t_list *new);
 void			ft_lstppclear(t_listpp **lstpp, void (*del)(void *));
+
+int				ft_abs(int nbr);
+int				ft_min(int a, int b);
+int				ft_max(int a, int b);
 #endif

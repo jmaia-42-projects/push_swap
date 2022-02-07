@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:31:38 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 12:08:22 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 14:04:23 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	get_median(t_list *list)
 	lst_size = ft_lstsize(sorted_list);
 	i = 0;
 	cur = sorted_list;
-	while (i++ < (int) (1.0 * lst_size / 2 - .5))
+	while (i++ < (int)(1.0 * lst_size / 2 - .5))
 		cur = cur->next;
 	median = *(int *)cur->content;
 	ft_lstclear(&sorted_list, 0);

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.c                                     :+:      :+:    :+:   */
+/*   get_double_distance_of.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 14:16:12 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/07 14:08:06 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/07 14:08:13 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort_general.h"
+#include "get_double_distance_of.h"
 
-#include <stdio.h>
-
-void	print_sort_general(t_stacks *stacks)
+void	get_double_distance_of(t_stack *stack, int elem, int distances[2])
 {
-	push_below_median(stacks);
-	push_everything_but_2_lasts(stacks);
-	push_back_to_a_sorted_way(stacks);
-	rotate_until_sorted(stacks);
+	t_list	*cur;
+	int		i;
+
+	i = 0;
+	cur = stack->lstpp->begin;
+	while (cur && *(int *)cur->content != elem)
+	{
+		i++;
+		cur = cur->next;
+	}
+	distances[1] = i;
+	distances[0] = -(ft_lstsize(stack->lstpp->begin) - i);
 }

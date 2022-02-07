@@ -9,13 +9,15 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				general/push_below_median.c \
 				general/push_everything_but_2_lasts.c \
 				general/push_back_to_A_sorted_way.c \
-				general/rotate_until_sorted.c
+				general/rotate_until_sorted.c \
+				stacks/get_double_distance_of.c \
+				general/bring_to_the_top.c
 
 OBJS		:=	${SRCS:.c=.o}
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Werror -Wextra -g3 -O0 #-fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 -O0 -fsanitize=address
 
 INCLUDE		=	-I includes/ -I includes/general
 

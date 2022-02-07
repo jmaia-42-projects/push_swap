@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:59:52 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 15:47:41 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 14:38:07 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct s_ops
 {
-	void		(*inv_op)(t_stacks *);
+	void		(*op)(t_stacks *);
 	const char	*op_name;
 }	t_ops;
 

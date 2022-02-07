@@ -6,24 +6,20 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 13:38:31 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/04 14:01:51 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 14:13:43 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rotate_until_sorted.h"
 
-// A MODIFIER, LES FONCTIONS SONT DANS UN AUTRE FICHIER
-int	get_best_distance_of(t_stack *stack, int elem);
-int	ft_abs(int nbr);
-# include <unistd.h>
-void	get_double_distance_of(t_stack *stack, int elem, int distances[2]);
+static int	get_best_distance_of(t_stack *stack, int elem);
+static void	rotate_n_times(t_stacks *stacks, int n);
 
 void	rotate_until_sorted(t_stacks *stacks)
 {
 	int		min;
 	t_list	*cur;
 	int		distance;
-	int		i;
 
 	min = 2147483647;
 	cur = stacks->stack_a->lstpp->begin;
@@ -34,10 +30,28 @@ void	rotate_until_sorted(t_stacks *stacks)
 		cur = cur->next;
 	}
 	distance = get_best_distance_of(stacks->stack_a, min);
+	rotate_n_times(stacks, distance);
+}
+
+static int	get_best_distance_of(t_stack *stack, int elem)
+{
+	int	distances[2];	
+
+	get_double_distance_of(stack, elem, distances);
+	if (ft_abs(distances[0]) < ft_abs(distances[1]))
+		return (distances[0]);
+	else
+		return (distances[1]);
+}
+
+static void	rotate_n_times(t_stacks *stacks, int n)
+{
+	int	i;
+
 	i = 0;
-	while (i < ft_abs(distance))
+	while (i < ft_abs(n))
 	{
-		if (distance < 0)
+		if (n < 0)
 		{
 			write(1, "rra\n", 4);
 			rra(stacks);
@@ -49,15 +63,4 @@ void	rotate_until_sorted(t_stacks *stacks)
 		}
 		i++;
 	}
-}
-
-int	get_best_distance_of(t_stack *stack, int elem)
-{
-	int	distances[2];	
-
-	get_double_distance_of(stack, elem, distances);
-	if (ft_abs(distances[0]) < ft_abs(distances[1]))
-		return (distances[0]);
-	else
-		return (distances[1]);
 }
