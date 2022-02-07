@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:19:11 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/19 16:31:13 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/04 14:29:39 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ static void	push(t_stack *from, t_stack *to)
 		return ;
 	pushed_node = from->lstpp->begin;
 	from->lstpp->begin = from->lstpp->begin->next;
-	ft_lstset_next(pushed_node, to->lstpp->begin);
-	to->lstpp->begin = pushed_node;
+	if (!from->lstpp->begin)
+		from->lstpp->end = 0;
+	else
+		from->lstpp->begin->previous = 0;
+	ft_lstppadd_front(to->lstpp, pushed_node);
 }

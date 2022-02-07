@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:31:38 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/03 15:53:53 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 10:43:39 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ static int	get_median(t_list *list)
 	sorted_list = ft_lstsort(list, &intcmp);
 	lst_size = ft_lstsize(sorted_list);
 	i = 0;
-	cur = list;
+	cur = sorted_list;
 	while (i++ < lst_size / 2)
 		cur = cur->next;
 	median = *(int *)cur->content;
 	ft_lstclear(&sorted_list, 0);
-	return (*(int *)cur->content);
+	return (median);
 }
 
 static int	intcmp(void *v1, void *v2)

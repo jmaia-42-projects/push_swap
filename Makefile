@@ -7,7 +7,9 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				stacks/print_stacks.c stacks/inv_ops/inv_op_utils.c \
 				general/sort_general.c \
 				general/push_below_median.c \
-				general/push_everything_but_2_lasts.c
+				general/push_everything_but_2_lasts.c \
+				general/push_back_to_A_sorted_way.c \
+				general/rotate_until_sorted.c
 
 OBJS		:=	${SRCS:.c=.o}
 
