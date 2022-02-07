@@ -26,7 +26,9 @@ SRCS_CHECK	=	$(SRCS_ONLY_CHECK) \
 				stacks/get_stacks.c \
 				stacks/get_stack.c \
 				stacks/free_stacks.c \
-				stacks/push_elem.c
+				stacks/push_elem.c \
+				libs/get_next_line/get_next_line.c \
+				libs/get_next_line/get_next_line_utils.c
 
 OBJS		:=	${SRCS:.c=.o}
 
@@ -38,9 +40,12 @@ NAME_CHECK	=	checker
 
 CFLAGS		=	-Wall -Werror -Wextra -g3 #-O0 -fsanitize=address
 
-INCLUDE		=	-I includes/ -I includes/general
+INCLUDE		=	-I includes/ -I includes/general -I libs/get_next_line
+
+OBJS_GNL	=	get_next_line.c get_next_line_utils.c
 
 LIBS		=	libs/libft/libft.a
+LIBS_CHECK	=	libs/libdynamic_buffer/libdynamic_buffer.a
 
 BUILD		=	build/
 
@@ -55,11 +60,23 @@ build/%.o	:	srcs/%.c
 $(NAME)	:	$(addprefix build/,${OBJS})	${LIBS}
 	cc ${CFLAGS} -o ${NAME} $(addprefix build/,${OBJS}) ${LIBS}
 
-$(NAME_CHECK)	:	$(addprefix build/, $(OBJS_CHECK))
-	cc $(CFLAGS) -o $(NAME_CHECK) $(addprefix build/,$(OBJS_CHECK)) $(LIBS)
+$(NAME_CHECK)	:	$(addprefix build/, $(OBJS_CHECK)) $(LIBS_CHECK)
+	cc $(CFLAGS) -o $(NAME_CHECK) $(addprefix build/,$(OBJS_CHECK)) $(LIBS) $(LIBS_CHECK)
 
 libs/libft/libft.a	:
 	make -C libs/libft
+
+libs/libdynamic_buffer/libdynamic_buffer.a	:
+	make -C libs/libdynamic_buffer
+
+build/%.o	:	%.c
+	@if [ ! -d $(dir $@) ]; then\
+		mkdir -p $(dir $@);\
+	fi
+	cc ${CFLAGS} ${INCLUDE} -D BUFFER_SIZE=512 -c $< -o $@
+
+libs/get_next_line/get_next_line.a	:	$(OBJS_GNL)
+	ar rc libs/get_next_line/get_next_line.a $(OBJS_GNL)
 
 libs	:	${LIBS}
 
@@ -73,6 +90,7 @@ fclean	:	clean
 
 fcleanlibs	:
 	make -C libs/libft fclean
+	make -C libs/libdynamic_buffer fclean
 
 fcleanall	:	fclean fcleanlibs
 
