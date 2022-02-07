@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:08:19 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 16:21:31 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 16:38:39 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack	*parse_stack_a(int ac, char **av)
 
 	err = !check_args(ac, av);
 	if (err)
-		return (print_error());
+		return (0);
 	i = ac - 1;
 	stack = get_stack();
 	if (!stack)
@@ -34,8 +34,6 @@ t_stack	*parse_stack_a(int ac, char **av)
 			ft_lstppclear(&stack->lstpp, &free);
 		i--;
 	}
-	if (err)
-		print_error();
 	return (stack);
 }
 
