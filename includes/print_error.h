@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inv_op_utils.h                                     :+:      :+:    :+:   */
+/*   print_error.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 15:35:44 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 17:58:38 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/07 16:18:31 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/07 16:22:01 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INV_OP_UTILS_H
-# define INV_OP_UTILS_H
+#ifndef PRINT_ERROR_H
+# define PRINT_ERROR_H
 
-# include "ops.h"
-# include "libft.h"
-# include "inv_ops.h"
+# include <unistd.h>
 
-const char	*get_inv_op_of(const char *op);
-void		init_inv_ops(t_ops inv_ops[11]);
-t_ops		get_op(const char *raw_op);
-void		get_ops(t_ops ops[11]);
+void	*print_error(void);
 
 #endif

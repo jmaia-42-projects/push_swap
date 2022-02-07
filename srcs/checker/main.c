@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 21:02:44 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/07 15:57:13 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/07 16:42:50 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-#include "sort_general.h"
-#include "print_error.h"
+#include "stacks.h"
 #include "parse_stack_a.h"
-#include "sort.h"
+#include "print_error.h"
+#include "check_sorting.h"
 
 int	main(int ac, char **av)
 {
@@ -37,10 +35,7 @@ int	main(int ac, char **av)
 		print_error();
 		return (1);
 	}
-	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 6)
-		print_sort_less_six(stacks);
-	else
-		print_sort_general(stacks);
+	check_sorting(stacks);
 	free_stacks(stacks, 1);
 	return (0);
 }
