@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:31:38 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 10:55:21 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 12:08:22 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	get_median(t_list *list);
 static int	intcmp(void *v1, void *v2);
 static void	rotate_to_nearest_below_median(t_stacks *stacks, int median);
+static int	get_distance_to_nearest_below_median(t_stack *stack, int median);
 
 void	push_below_median(t_stacks *stacks)
 {
@@ -66,9 +67,45 @@ static int	intcmp(void *v1, void *v2)
 
 static void	rotate_to_nearest_below_median(t_stacks *stacks, int median)
 {
+	int	distance;
+
+	distance = get_distance_to_nearest_below_median(stacks->stack_a, median);
 	while (*(int *)stacks->stack_a->lstpp->begin->content > median)
 	{
-		write(1, "ra\n", 3);
-		ra(stacks);
+		if (distance < 0)
+		{
+			write(1, "rra\n", 4);
+			rra(stacks);
+		}
+		else
+		{
+			write(1, "ra\n", 3);
+			ra(stacks);
+		}
 	}
+}
+
+static int	get_distance_to_nearest_below_median(t_stack *stack, int median)
+{
+	t_list	*cur;
+	t_list	*rev_cur;
+	int		i_cur;
+	int		i_rev;
+
+	cur = stack->lstpp->begin;
+	rev_cur = stack->lstpp->end;
+	i_cur = 0;
+	i_rev = -1;
+	while (cur != rev_cur)
+	{
+		if (*(int *)cur->content > median)
+			return (i_cur);
+		if (*(int *)rev_cur->content > median)
+			return (i_rev);
+		i_cur++;
+		i_rev--;
+		cur = cur->next;
+		rev_cur = rev_cur->previous;
+	}
+	return (0);
 }

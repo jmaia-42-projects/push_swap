@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:08:50 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/04 14:49:11 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 13:46:58 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	get_closest_elems(t_stacks *stacks, int elems[2]);
 //static int	*get_upper_bounds(t_stacks *stacks);
 
 # include <stdio.h>
+void	print_stacks(t_stacks *stacks);
 
 void	push_back_to_A_sorted_way(t_stacks *stacks)
 {
@@ -40,6 +41,7 @@ static void	push_next_elem_to_A(t_stacks *stacks)
 	bring_to_the_top(stacks, elems);
 	pa(stacks);
 	write(1, "pa\n", 3);
+//	print_stacks(stacks);
 }
 
 static void	bring_to_the_top(t_stacks *stacks, int elems[2])
@@ -211,14 +213,14 @@ static int	get_cost(t_stacks *stacks, int elems[2])
 	costs[2] = dist0[1] - dist1[0];
 	costs[3] = ft_max(dist0[1], dist1[1]);
 	i = 1;
-	cost = costs[0];
+	cost = ft_abs(costs[0]);
 	while (i < 4)
 	{
 		if (costs[i] < cost)
-			cost = costs[i];
+			cost = ft_abs(costs[i]);
 		i++;
 	}
-	return (cost);
+	return (ft_abs(cost));
 }
 
 int	ft_abs(int nbr)
@@ -271,7 +273,9 @@ void	get_double_distance_of(t_stack *stack, int elem, int distances[2])
 		cur = cur->next;
 	}
 	distances[1] = i;
-	distances[0] = to_relative_distance(distances[1], ft_lstsize(stack->lstpp->begin));
+//	distances[0] = to_relative_distance(distances[1], ft_lstsize(stack->lstpp->begin));
+	(void) to_relative_distance;
+	distances[0] = -(ft_lstsize(stack->lstpp->begin) - i);
 }
 
 //static int	get_relative_distance_of(t_stack *stack, int elem)
