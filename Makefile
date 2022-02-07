@@ -38,7 +38,7 @@ NAME		=	push_swap
 
 NAME_CHECK	=	checker
 
-CFLAGS		=	-Wall -Werror -Wextra -g3 #-O0 -fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 -D BUFFER_SIZE=512 #-O0 -fsanitize=address
 
 INCLUDE		=	-I includes/ -I includes/general -I libs/get_next_line
 
@@ -73,7 +73,7 @@ build/%.o	:	%.c
 	@if [ ! -d $(dir $@) ]; then\
 		mkdir -p $(dir $@);\
 	fi
-	cc ${CFLAGS} ${INCLUDE} -D BUFFER_SIZE=512 -c $< -o $@
+	cc ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 libs/get_next_line/get_next_line.a	:	$(OBJS_GNL)
 	ar rc libs/get_next_line/get_next_line.a $(OBJS_GNL)
