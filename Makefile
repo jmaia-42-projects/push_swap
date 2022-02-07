@@ -15,7 +15,8 @@ SRCS		=	main.c less_six/sort.c stacks/swap.c stacks/push.c stacks/rotate.c \
 				parse_stack_a.c \
 				print_error.c
 
-SRCS_ONLY_CHECK_	=	main.c
+SRCS_ONLY_CHECK_	=	main.c \
+						check_sorting.c
 
 SRCS_ONLY_CHECK	=	$(addprefix checker/, $(SRCS_ONLY_CHECK_))
 
@@ -35,7 +36,7 @@ NAME		=	push_swap
 
 NAME_CHECK	=	checker
 
-CFLAGS		=	-Wall -Werror -Wextra #-g3 -O0 -fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra -g3 #-O0 -fsanitize=address
 
 INCLUDE		=	-I includes/ -I includes/general
 

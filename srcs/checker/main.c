@@ -6,13 +6,14 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:57:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 16:24:54 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/07 16:42:50 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stacks.h"
 #include "parse_stack_a.h"
 #include "print_error.h"
+#include "check_sorting.h"
 
 int	main(int ac, char **av)
 {
@@ -34,6 +35,7 @@ int	main(int ac, char **av)
 		print_error();
 		return (1);
 	}
+	check_sorting(stacks);
 	free_stacks(stacks, 1);
 	return (0);
 }
