@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 14:04:18 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/07 13:35:06 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/01/19 16:03:16 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	push_elem(t_stack *stack, int elem)
 		free(elem_ptr);
 		return (0);
 	}
-	ft_lstadd_front(&stack->list, node);
+	ft_lstppadd_front(stack->lstpp, node);
 	return (1);
 }

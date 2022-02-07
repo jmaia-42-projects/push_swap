@@ -6,32 +6,48 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:18:13 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/10 16:38:10 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/03 15:52:44 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "stacks.h"
 #include "libft.h"
+
+#include "stacks.h"
 #include "sort.h"
+#include "sort_general.h"
 
 static t_stack	*parse_stack_a(int ac, char **av);
 static int		check_args(int ac, char **av);
-static int		print_error(void);
+static void		*print_error(void);
 
 int	main(int ac, char **av)
 {
-	t_stack		*stack_a;
 	t_stacks	*stacks;
 
 	if (ac == 1)
 		return (0);
-	stack_a = parse_stack_a(ac, av);
-	stacks = get_stacks(stack_a, 0);
-	print_sort(stacks);
-	free_stacks(stacks);
+	stacks = get_stacks(0, 0);
+	if (!stacks)
+	{
+		print_error();
+		return (1);
+	}
+	stacks->stack_a = parse_stack_a(ac, av);
+	stacks->stack_b = get_stack();
+	if (!stacks->stack_a || !stacks->stack_b)
+	{
+		free_stacks(stacks, 1);
+		print_error();
+		return (1);
+	}
+	if (ft_lstsize(stacks->stack_a->lstpp->begin) <= 1)
+		print_sort_less_six(stacks);
+	else
+		print_sort_general(stacks);
+	free_stacks(stacks, 1);
 	return (0);
 }
 
@@ -43,15 +59,17 @@ static t_stack	*parse_stack_a(int ac, char **av)
 
 	err = !check_args(ac, av);
 	if (err)
-		exit(print_error());
-	i = 1;
+		return (print_error());
+	i = ac - 1;
 	stack = get_stack();
-	while (i < ac && !err)
+	if (!stack)
+		return (0);
+	while (i >= 1 && !err)
 	{
-		err = !push_elem(stack, atoi(av[i]));
+		err = !push_elem(stack, ft_atoi(av[i]));
 		if (err)
-			ft_lstclear(&stack->list, &free);
-		i++;
+			ft_lstppclear(&stack->lstpp, &free);
+		i--;
 	}
 	if (err)
 		print_error();
@@ -80,8 +98,8 @@ static int	check_args(int ac, char **av)
 	return (1);
 }
 
-static int	print_error(void)
+static void	*print_error(void)
 {
 	write(2, "Error\n", 6);
-	return (1);
+	return (0);
 }
