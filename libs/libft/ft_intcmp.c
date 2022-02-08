@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.c                                     :+:      :+:    :+:   */
+/*   ft_intcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/08 11:02:39 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/08 11:05:45 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/08 11:06:08 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort_general.h"
+#include "libft.h"
 
-void	print_sort_general(t_stacks *stacks)
+int	intcmp(void *a, void *b)
 {
-	if (ft_lstis_sorted(stacks->stack_a->lstpp->begin))
-		return ;
-	push_below_median(stacks);
-	push_everything_but_2_lasts(stacks);
-	push_back_to_a_sorted_way(stacks);
-	rotate_until_sorted(stacks);
+	return (*(int *)a - *(int *)b);
 }

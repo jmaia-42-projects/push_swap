@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_general.c                                     :+:      :+:    :+:   */
+/*   ft_lstis_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 17:02:17 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/08 11:02:39 by jmaia            ###   ########.fr       */
+/*   Created: 2022/02/08 10:59:59 by jmaia             #+#    #+#             */
+/*   Updated: 2022/02/08 11:02:33 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort_general.h"
+#include "libft.h"
 
-void	print_sort_general(t_stacks *stacks)
+int	ft_lstis_sorted(t_list *lst)
 {
-	if (ft_lstis_sorted(stacks->stack_a->lstpp->begin))
-		return ;
-	push_below_median(stacks);
-	push_everything_but_2_lasts(stacks);
-	push_back_to_a_sorted_way(stacks);
-	rotate_until_sorted(stacks);
+	t_list	*sorted_list;
+	int		is_sorted;
+
+	sorted_list = ft_lstsort(lst, &intcmp);
+	is_sorted = ft_lstequals(lst, sorted_list);
+	ft_lstclear(&sorted_list, 0);
+	return (is_sorted);
 }

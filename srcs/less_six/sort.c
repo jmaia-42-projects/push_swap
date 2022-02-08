@@ -6,14 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:13:21 by jmaia             #+#    #+#             */
-/*   Updated: 2022/01/21 16:57:15 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/08 11:06:46 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 
 static t_sort	*init_sorter(t_stacks *stacks);
-static int		intcmp(void *v1, void *v2);
 
 void	print_sort_less_six(t_stacks *stacks)
 {
@@ -58,16 +57,6 @@ static t_sort	*init_sorter(t_stacks *stacks)
 	if (!sorter->sorted_list || !sorter->the_list)
 		return (0);
 	return (sorter);
-}
-
-static int	intcmp(void *v1, void *v2)
-{
-	int	*i1;
-	int	*i2;
-
-	i1 = v1;
-	i2 = v2;
-	return (*i1 - *i2);
 }
 
 void	free_sorter(t_sort **sorter)

@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:46:11 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 21:24:12 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/08 11:06:14 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	read_ops(t_dynamic_buffer *buf);
 static int	apply_ops(t_stacks *stacks, t_dynamic_buffer *buf);
-static int	is_lst_sorted(t_list *lst);
 static int	intcmp(void *a, void *b);
 
 int	check_sorting(t_stacks *stacks)
@@ -30,7 +29,7 @@ int	check_sorting(t_stacks *stacks)
 	err = !apply_ops(stacks, buf);
 	if (err)
 		return (0);
-	is_sorted = is_lst_sorted(stacks->stack_a->lstpp->begin);
+	is_sorted = ft_lstis_sorted(stacks->stack_a->lstpp->begin);
 	if (is_sorted && !stacks->stack_b->lstpp->begin)
 		write(1, "OK\n", 3);
 	else
@@ -72,20 +71,4 @@ static int	apply_ops(t_stacks *stacks, t_dynamic_buffer *buf)
 		i++;
 	}
 	return (1);
-}
-
-static int	is_lst_sorted(t_list *lst)
-{
-	t_list	*sorted_list;
-	int		is_sorted;
-
-	sorted_list = ft_lstsort(lst, &intcmp);
-	is_sorted = ft_lstequals(lst, sorted_list);
-	ft_lstclear(&sorted_list, 0);
-	return (is_sorted);
-}
-
-static int	intcmp(void *a, void *b)
-{
-	return (*(int *)a - *(int *)b);
 }

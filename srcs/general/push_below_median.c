@@ -6,14 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:31:38 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/07 14:04:23 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/08 11:07:08 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_below_median.h"
 
 static int	get_median(t_list *list);
-static int	intcmp(void *v1, void *v2);
 static void	rotate_to_nearest_below_median(t_stacks *stacks, int median);
 static int	get_distance_to_nearest_below_median(t_stack *stack, int median);
 
@@ -53,16 +52,6 @@ static int	get_median(t_list *list)
 	median = *(int *)cur->content;
 	ft_lstclear(&sorted_list, 0);
 	return (median);
-}
-
-static int	intcmp(void *v1, void *v2)
-{
-	int	*i1;
-	int	*i2;
-
-	i1 = v1;
-	i2 = v2;
-	return (*i1 - *i2);
 }
 
 static void	rotate_to_nearest_below_median(t_stacks *stacks, int median)
