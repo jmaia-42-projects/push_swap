@@ -6,7 +6,7 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:46:11 by jmaia             #+#    #+#             */
-/*   Updated: 2022/02/08 11:06:14 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/02/11 12:39:30 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	read_ops(t_dynamic_buffer *buf);
 static int	apply_ops(t_stacks *stacks, t_dynamic_buffer *buf);
-static int	intcmp(void *a, void *b);
 
 int	check_sorting(t_stacks *stacks)
 {
